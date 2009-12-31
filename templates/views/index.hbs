@@ -24,7 +24,7 @@
   <meta name="theme-color" content="#e42">
 </head>
 
-<body>
+<body onload="checkCookie()">
 
   <!-- Add your site or application content here -->
   <div id="big-container">
@@ -161,7 +161,7 @@
           <!-- Main Bar Contents -->
           <div class="col-12 col-md-8 mt-3" id="main-bar">
             <!-- Teacher Profile -->
-            <div id="profile-box" class="section container mw-100 py-4">
+            <div id="profile-box" class="section container mw-100 py-4 mt-2">
               <div id="profile-image"></div>
               <div id="profile-bio">
                 <div id="profile-name">
@@ -199,11 +199,15 @@
                   <div class="col-12 col-sm-4 mb-2">
                     <input type="text" class="teacher-f-username" placeholder="rellbetis" disabled></input>
                   </div>
+
+                  {{!-- Buttoms --}}
                   <div class="col-12 col-sm-4 mb-2">
-                    <button id="profile-edit">EDIT <i class="fas fa-pen"></i></button>
+                    <button class=" btn btn-primary btn-sm editBtn">EDIT <i class="fas fa-pen"></i></button>
                   </div>
                   <div class="col-12 col-sm-4">
-                    <button id="profile-save" type="submit" disabled>SAVE <i class="fas fa-server"></i></button>
+                    <button class="btn btn-success btn-sm saveBtn" type="submit" disabled> SAVE <i
+                        class="fas fa-server"></i>
+                    </button>
                   </div>
                 </div>
               </form>
@@ -217,89 +221,207 @@
                 </div>
               </div>
 
-              <div class="row py-2 s-light">
+              {{!-- Monday --}}
+              <div class="row s-light">
                 <div class="col-12 mb-n1">
-                  <h5>Monday</h5>
+                  <h6>MONDAY</h6>
                 </div>
-                <div class="col"><b>SS3</b>
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
-                </div>
-
-                <div class="col"><b>JSS3</b>
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
+                <div class="col monday-item">SS3 <i class="far fa-clock"></i>3:00
                 </div>
 
-                <div class="col"><b>SS3</b>
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
+                <div class="col monday-item"> JSS3 <i class="far fa-clock"></i>2:00
+                </div>
+
+                <div class="col monday-item">SS3 <i class="far fa-clock"></i>2:00
                 </div>
               </div>
 
-              <div class="row py-2 s-dark">
+              {{!-- Tuesday --}}
+              <div class="row s-light">
                 <div class="col-12 mb-n1">
-                  <h5>Tuesday</h5>
+                  <h6>TUESDAY</h6>
                 </div>
-                <div class="col"><b>SS3</b>
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
-                </div>
-
-                <div class="col"><b>JSS3</b>
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
+                <div class="col tuesday-item">SS3 <i class="far fa-clock"></i>3:00
                 </div>
 
-                <div class="col"><b>SS3</b>
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
+                <div class="col  tuesday-item">
+                  JSS3 <i class="far fa-clock"></i>2:00
+                </div>
+
+                <div class="col tuesday-item">SS3 <i class="far fa-clock"></i>2:00</span>
                 </div>
               </div>
 
-              <div class="row py-2 s-light">
+              {{!-- Wednessday --}}
+              <div class="row s-light ">
                 <div class="col-12 mb-n1">
-                  <h5>Wednessday</h5>
+                  <h6>WEDNESSDAY</h6>
                 </div>
-                <div class="col"><b>SS3</b>
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
-                </div>
-
-                <div class="col"><b>JSS3</b>
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
+                <div class="col wednessday-item">SS3 <i class="far fa-clock"></i>3:00
                 </div>
 
-                <div class="col"><b>SS3</b>
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
+                <div class="col  wednessday-item">
+                  JSS3 <i class="far fa-clock"></i>2:00
+                </div>
+
+                <div class="col wednessday-item">SS3 <i class="far fa-clock"></i>2:00</span>
                 </div>
               </div>
 
-              <div class="row py-2 s-dark">
+              {{!-- Thursday --}}
+              <div class="row s-light">
                 <div class="col-12 mb-n1">
-                  <h5>Thursday</h5>
+                  <h6>THURSDAY</h6>
                 </div>
-                <div class="col"><b>SS3</b>
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
-                </div>
-
-                <div class="col"><b>JSS3</b>
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
+                <div class="col thursday-item">SS3 <i class="far fa-clock"></i>3:00
                 </div>
 
-                <div class="col"><b>SS3</b>
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
+                <div class="col thursday-item">
+                  JSS3 <i class="far fa-clock"></i>2:00
+                </div>
+
+                <div class="col thursday-item">SS3 <i class="far fa-clock"></i>2:00</span>
                 </div>
               </div>
 
-              <div class="row py-2 s-light">
+              {{!-- Friday --}}
+              <div class="row s-light">
                 <div class="col-12 mb-n1">
-                  <h5>Friday</h5>
+                  <h6>FRIDAY</h6>
                 </div>
-                <div class="col"><b>SS3</b>
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
-                </div>
-
-                <div class="col"><b>JSS3</b>
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
+                <div class="col friday-item">SS3 <i class="far fa-clock"></i>3:00
                 </div>
 
-                <div class="col"><b>SS3</b>
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
+                <div class="col  friday-item">
+                  JSS3 <i class="far fa-clock"></i>2:00
                 </div>
+
+                <div class="col friday-item">SS3 <i class="far fa-clock"></i>2:00</span>
+                </div>
+              </div>
+
+              {{!-- Buttons --}}
+              <div class="row bg-dark mb-0 s-light " id="allSchButtons">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <button class="btn btn-sm btn-success mw-100" id="scheduleManageBtn"
+                    onclick="showTableOptions('scheduleManageBtn', 'schBtnContainer')">
+                    Manage Table
+                  </button>
+                </div>
+
+                <div class="col-12 hidden" id="schBtnContainer">
+                  <div class="row">
+                    <div class="col-md-3"><button class="btn btn-success btn-sm mb-2 mw-100"
+                        onclick="showAdd('schBtnContainer', 'schFormContainer', 'addForm', 'allSchButtons', 'deleteForm')">Add</button>
+                    </div>
+                    <div class="col-md-3"><button class="btn btn-primary btn-sm mb-2 mw-100"
+                        onclick="showAdd('schBtnContainer', 'schFormContainer', 'addForm', 'allSchButtons', 'deleteForm')">Edit</button>
+                    </div>
+                    <div class="col-md-3"><button class="btn btn-danger btn-sm mw-100"
+                        onclick="showDelete('schBtnContainer', 'schFormContainer', 'deleteForm', 'allSchButtons', 'addForm' )">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {{!-- Forms --}}
+              <div class="row bg-dark s-light hidden" id="schFormContainer">
+                {{!-- delete --}}
+                <div class="col-12 table-form hidden" id="deleteForm">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-6 mb-2">
+                        <select class="mw-100">
+                          <option value="">Select Day</option>
+                          <option value="monday">Monday</option>
+                          <option value="tuesday">Tuesday</option>
+                          <option value="wednessday">Wednessday</option>
+                          <option value="thursday">Thursday</option>
+                          <option value="friday">Friday</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-6 mb-2">
+                        <select class="mw-100">
+                          <option value="">Period</option>
+                          <option value="period1">Period 1</option>
+                          <option value="period2">Period 2</option>
+                          <option value="period3">Period 3</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-6">
+                        <button class="mw-100 btn btn-danger btn-sm" type="submit">DELETE</button>
+                      </div>
+
+                      <div class="col-md-6">
+                        <span class="mw-100 btn btn-danger btn-sm" onclick="cancelT('sch')">CANCEL</span>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                {{!-- Edit/Add --}}
+                <div class="col-12 table-form hidden" id="addForm">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-6 mb-2">
+                        <select class="mw-100">
+                          <option value="">Day</option>
+                          <option value="monday">Monday</option>
+                          <option value="tuesday">Tuesday</option>
+                          <option value="wednessday">Wednessday</option>
+                          <option value="thursday">Thursday</option>
+                          <option value="friday">Friday</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-6 mb-2">
+                        <select class="mw-100">
+                          <option value="">Period</option>
+                          <option value="period1">Period 1</option>
+                          <option value="period2">Period 2</option>
+                          <option value="period3">Period 3</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-6 mb-2">
+                        <select class="mw-100">
+                          <option value="">Class</option>
+                          <option value="JSS1">JSS1</option>
+                          <option value="JSS2">JSS2</option>
+                          <option value="JSS3">JSS3</option>
+                          <option value="SS1">SS1</option>
+                          <option value="SS2">SS2</option>
+                          <option value="SS3">SS3</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-6 mb-2">
+                        <select class="mw-100">
+                          <option value="">Time</option>
+                          <option value="7AM">7AM</option>
+                          <option value="8AM">8AM</option>
+                          <option value="9AM">9AM</option>
+                          <option value="10AM">10AM</option>
+                          <option value="11AM">11AM</option>
+                          <option value="12PM">12PM</option>
+                          <option value="1PM">1PM</option>
+                          <option value="2PM">2PM</option>
+                          <option value="3PM">3PM</option>
+                          <option value="4PM">4PM</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <span class="mw-100 btn btn-success btn-sm" onclick="cancelT('sch')">CANCEL </span>
+                      </div>
+                      <div class="col-md-6">
+                        <button class="mw-100 btn btn-success btn-sm" type="submit">SAVE </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
               </div>
             </div>
 
@@ -312,68 +434,13 @@
               </div>
 
               <div class="row section-content">
-                <div class="col-12">28th August: We are launching a new portal </div>
-                <div class="col-12">28th June: We are launching a new portal </div>
-                <div class="col-12">18th April: We are launching a new portal </div>
-                <div class="col-12">22nd May: We are launching a new portal </div>
-                <div class="col-12">2nd September: We are launching a new portal </div>
+                <div class="col-12 notification-item">28th August: We are launching a new portal </div>
+                <div class="col-12 notification-item">28th June: We are launching a new portal </div>
+                <div class="col-12 notification-item">18th April: We are launching a new portal </div>
+                <div class="col-12 notification-item">22nd May: We are launching a new portal </div>
+                <div class="col-12 notification-item">2nd September: We are launching a new portal </div>
               </div>
 
-            </div>
-
-            {{!-- Student Sylabbles --}}
-            <div id="student-syllables" class="section container mw-100">
-              {{!-- Header --}}
-              <div class="row section-header">
-                <div class="col py-2">
-                  <h4><i class="fas fa-book"></i> Student Sylables</h4>
-                </div>
-              </div>
-
-              {{!-- Class taken --}}
-              <div class="row">
-                <div class="col py-2 s-dark"><b>SS1</b> - <b>SS3</b> - <b>SS2</b></div>
-
-              </div>
-
-              {{!-- Sylabble Content --}}
-              <div class="row section-content">
-                <div class="col-12 ">
-                  Week 1: Introduction to biology
-                </div>
-
-                <div class="col-12  ">
-                  Week 2: Complex biological formations and mathematial alterations II
-                </div>
-
-                <div class="col-12 ">
-                  Week 3: Introduction to biology
-                </div>
-
-                <div class="col-12 ">
-                  Week 4: Introduction genetics
-                </div>
-
-                <div class="col-12 ">
-                  Week 5: Reflexes and Nervous System
-                </div>
-
-                <div class="col-12 ">
-                  Week 6: Respiratory system and diseases
-                </div>
-              </div>
-
-              {{!-- Sylabble form --}}
-              <div class="row my-2">
-
-                <div class="col-6 col-md-4 col-lg-3">
-                  <button class="btn btn-sm mbutton" style="width: 100%;">Add Class</button>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                  <button class="btn btn-sm mbutton" style="width: 100%;">Delete Class</button>
-                </div>
-
-              </div>
             </div>
 
             {{!-- Students profile --}}
@@ -432,6 +499,132 @@
                 <div class="col-2">13</div>
                 <div class="col-2">85</div>
               </div>
+
+              {{!-- Buttons --}}
+              <div class="row bg-dark mb-0 s-light " id="allStudentButtons">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                  <button class="btn btn-sm btn-success mw-100" id="studentManageBtn"
+                    onclick="showTableOptions('studentManageBtn', 'studentBtnContainer')">
+                    Manage Table
+                  </button>
+                </div>
+
+                <div class="col-12 hidden" id="studentBtnContainer">
+                  <div class="row">
+                    <div class="col-md-3"><button class="btn btn-success btn-sm mb-2 mw-100"
+                        onclick="showAdd('studentBtnContainer', 'studentFormContainer', 'studentAddForm', 'allStudentButtons', 'studentDeleteForm')">Add</button>
+                    </div>
+                    <div class="col-md-3"><button class="btn btn-primary btn-sm mb-2 mw-100"
+                        onclick="showAdd('studentBtnContainer', 'studentFormContainer', 'studentAddForm', 'allStudentButtons', 'studentDeleteForm')">Edit</button>
+                    </div>
+                    <div class="col-md-3"><button class="btn btn-danger btn-sm mw-100"
+                        onclick="showDelete('studentBtnContainer', 'studentFormContainer', 'studentDeleteForm', 'allStudentButtons', 'studentAddForm')">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {{!-- Forms --}}
+              <div class="row bg-dark s-light hidden" id="studentFormContainer">
+                {{!-- delete --}}
+                <div class="col-12 table-form hidden" id="studentDeleteForm">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-6 mb-2">
+                        <select class="mw-100">
+                          <option value="">Select Day</option>
+                          <option value="monday">Monday</option>
+                          <option value="tuesday">Tuesday</option>
+                          <option value="wednessday">Wednessday</option>
+                          <option value="thursday">Thursday</option>
+                          <option value="friday">Friday</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-6 mb-2">
+                        <select class="mw-100">
+                          <option value="">Period</option>
+                          <option value="period1">Period 1</option>
+                          <option value="period2">Period 2</option>
+                          <option value="period3">Period 3</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-6">
+                        <button class="mw-100 btn btn-danger btn-sm" type="submit">DELETE</button>
+                      </div>
+
+                      <div class="col-md-6">
+                        <span class="mw-100 btn btn-danger btn-sm" onclick="cancelT('student')">CANCEL</span>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                {{!-- Edit/Add --}}
+                <div class="col-12 table-form hidden" id="studentAddForm">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-6 mb-2">
+                        <select class="mw-100">
+                          <option value="">Day</option>
+                          <option value="monday">Monday</option>
+                          <option value="tuesday">Tuesday</option>
+                          <option value="wednessday">Wednessday</option>
+                          <option value="thursday">Thursday</option>
+                          <option value="friday">Friday</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-6 mb-2">
+                        <select class="mw-100">
+                          <option value="">Period</option>
+                          <option value="period1">Period 1</option>
+                          <option value="period2">Period 2</option>
+                          <option value="period3">Period 3</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-6 mb-2">
+                        <select class="mw-100">
+                          <option value="">Class</option>
+                          <option value="JSS1">JSS1</option>
+                          <option value="JSS2">JSS2</option>
+                          <option value="JSS3">JSS3</option>
+                          <option value="SS1">SS1</option>
+                          <option value="SS2">SS2</option>
+                          <option value="SS3">SS3</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-6 mb-2">
+                        <select class="mw-100">
+                          <option value="">Time</option>
+                          <option value="7AM">7AM</option>
+                          <option value="8AM">8AM</option>
+                          <option value="9AM">9AM</option>
+                          <option value="10AM">10AM</option>
+                          <option value="11AM">11AM</option>
+                          <option value="12PM">12PM</option>
+                          <option value="1PM">1PM</option>
+                          <option value="2PM">2PM</option>
+                          <option value="3PM">3PM</option>
+                          <option value="4PM">4PM</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-6">
+                        <button class="mw-100 btn btn-success btn-sm" type="submit">SAVE </button>
+                      </div>
+
+                      <div class="col-md-6">
+                        <span class="mw-100 btn btn-success btn-sm" onclick="cancelT('student')">Cancel </span>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+              </div>
             </div>
 
             <!-- Welcome Box -->
@@ -444,9 +637,9 @@
               </div>
             </div>
           </div>
-
+          {{!-- -12  -12  --}}
           <!-- Side Bar Contents -->
-          <div class="col-12 col-md-4 mt-3" id="side-bar">
+          <div class="col-12 col-md-4 mt-md-3" id="side-bar">
             <!-- Sidebar Name and Avatar -->
             <div class="row" id="sidebar-box">
               <div class="py-2 pl-2" id="sidebar-item">
@@ -566,7 +759,6 @@
     </div>
   </noscript>
   <script src="/js/vendor/modernizr-3.11.2.min.js"></script>
-  {{!-- <script src="/assets/bootstrap/js/bootstrap.min.js"></script> --}}
   <script src="/js/plugins.js"></script>
   <script src="/js/main.js"></script>
 </body>

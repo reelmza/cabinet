@@ -9,8 +9,8 @@ const loginToRegister = document.querySelector("#login-register-link");
 const loginError = document.querySelector(".myAlert");
 
 // LoginForm Data
-const loginUsername = document.querySelector("#login-username");
-const loginPassword = document.querySelector("#login-password");
+var loginUsername = document.querySelector("#login-username");
+var loginPassword = document.querySelector("#login-password");
 const loginPerson = document.querySelector("#login-type");
 
 // Register Form elements
@@ -38,9 +38,34 @@ const dropDownIcon = document.querySelector("#dropdown-icon");
 const closeMainDropdown = document.querySelector("#close-main-dropdown");
 
 // Global Funtions
-const loadItems = (data) => {
-  // Teacher Form Name / Other elements where teacher name appears
-  // Name
+const checkCookie = () => {
+  if (document.cookie != "") {
+    rawCookie = document.cookie.split(";");
+    const usernameArray = rawCookie[0].split("=");
+    const passwordArray = rawCookie[1].split("=");
+
+    const cookieUsername = usernameArray[1];
+    const cookiePassword = passwordArray[1];
+
+    // Cookie isswapped after browser resets, so use below function
+    if (usernameArray[0] === "username") {
+      loginFunction(cookieUsername, cookiePassword);
+    } else {
+      loginFunction(cookiePassword, cookieUsername);
+    }
+  } else {
+    console.log("No cookie");
+  }
+};
+
+const loadBasicData = (data) => {
+  // Set cookie to avoid reload refresh
+  document.cookie =
+    "username=" + data.username + "; max-age=" + 60 * 60 * 24 * 20 + ";";
+  document.cookie =
+    "password=" + data.password + "; max-age=" + 60 * 60 * 24 * 20 + ";";
+
+  // Basic user data
   document.querySelectorAll(".teacher-name").forEach((element) => {
     element.textContent = data.name;
   });
@@ -82,6 +107,35 @@ const loadItems = (data) => {
   document
     .querySelector(".teacher-f-username")
     .setAttribute("value", data.username);
+
+  // Notification
+  const not = document.querySelectorAll(".notification-item");
+  const notLength = not.length - 1;
+  const dataNotification = data.notification;
+
+  for (let i = notLength; i > -1; i--) {
+    not[i].textContent = dataNotification[i];
+  }
+
+  // Classes schedule
+  const monday = document.getElementsByClassName("monday-item");
+  const tuesday = document.getElementsByClassName("tuesday-item");
+  const wednessday = document.getElementsByClassName("wednessday-item");
+  const thursday = document.getElementsByClassName("thursday-item");
+  const friday = document.getElementsByClassName("friday-item");
+  // console.log(data.schedule.monday[0].split(";"));
+
+  const distribute = (day, dayString) => {
+    for (var i = 0; i < data.schedule.monday.length; i++) {
+      const split = data.schedule[dayString][i].split("@");
+      day[i].innerHTML = split[0] + " <i class='far fa-clock'></i> " + split[1];
+    }
+  };
+  distribute(monday, "monday");
+  distribute(tuesday, "tuesday");
+  distribute(wednessday, "wednessday");
+  distribute(thursday, "thursday");
+  distribute(friday, "friday");
 };
 
 // Login functions
@@ -110,14 +164,9 @@ registerToLogin.addEventListener("click", (e) => {
   //Show login form
   loginFormBox.setAttribute("style", "display:flex");
 });
-// Login function
-loginForm.addEventListener("submit", (e) => {
-  e.preventDefault();
 
-  // Data from the form
-  const username = loginUsername.value.toLowerCase().split(" ").join("");
-  const password = loginPassword.value.toLowerCase().split(" ").join("");
-
+// Login function /LoginForm
+const loginFunction = (username, password) => {
   fetch("/login?username=" + username + "&password=" + password).then(
     (response) => {
       response.json().then((data) => {
@@ -132,7 +181,6 @@ loginForm.addEventListener("submit", (e) => {
             loginError.setAttribute("style", "display:none;");
           }, 3000);
         } else {
-          console.log(data.message);
           appForms.setAttribute("style", "display:none !important");
           mainBar.setAttribute("class", "col-12 col-md-8 mt-2");
 
@@ -140,11 +188,21 @@ loginForm.addEventListener("submit", (e) => {
           headerContainer.setAttribute("style", "display:flex;");
           sideBar.setAttribute("style", "display:flex;");
 
-          loadItems(data);
+          loadBasicData(data);
         }
       });
     }
   );
+};
+
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  // Data from the form
+  const formUsername = loginUsername.value.toLowerCase().split(" ").join("");
+  const formPassword = loginPassword.value.toLowerCase().split(" ").join("");
+
+  console.log("From Form: " + formUsername, formPassword);
+  loginFunction(formUsername, formPassword);
 });
 
 // Register functions
@@ -181,11 +239,11 @@ registerForm.addEventListener("submit", (e) => {
 });
 
 // Teacher profile functions
-const teacherSave = document.querySelector("#profile-save");
+const teacherSave = document.querySelector(".saveBtn");
 const teacherForm = document.querySelector("#profile-form");
 
 // Enable disable inputs
-document.querySelector("#profile-edit").addEventListener("click", (e) => {
+document.querySelector(".editBtn").addEventListener("click", (e) => {
   e.preventDefault();
 
   document.querySelectorAll(".disabled").forEach((element) => {
@@ -226,10 +284,53 @@ teacherForm.addEventListener("submit", (e) => {
   ).then((response) => {
     response.json().then((data) => {
       if (data.success) {
-        loadItems(data.newInfo);
+        loadBasicData(data.newInfo);
       } else {
         console.log("Failed");
       }
     });
   });
 });
+
+const showTableOptions = (manageBtn, btnContainer) => {
+  document.getElementById(manageBtn).classList.add("hidden");
+  document.getElementById(btnContainer).classList.remove("hidden");
+};
+
+const showAdd = (btnContainer, formContainer, addForm, allBtn, deleteForm) => {
+  document.getElementById(btnContainer).classList.add("hidden");
+  document.getElementById(formContainer).classList.remove("hidden");
+  document.getElementById(addForm).classList.remove("hidden");
+  document.getElementById(deleteForm).classList.add("hidden");
+  document.getElementById(allBtn).classList.add("hidden");
+};
+
+const showDelete = (
+  btnContainer,
+  formContainer,
+  deleteForm,
+  allBtn,
+  addForm
+) => {
+  document.getElementById(btnContainer).classList.add("hidden");
+  document.getElementById(formContainer).classList.remove("hidden");
+  document.getElementById(addForm).classList.add("hidden");
+  document.getElementById(deleteForm).classList.remove("hidden");
+  document.getElementById(allBtn).classList.add("hidden");
+};
+
+const cancelT = (tableName) => {
+  if (tableName === "student") {
+    document.getElementById("studentFormContainer").classList.add("hidden");
+    document.getElementById("studentBtnContainer").classList.add("hidden");
+    document.getElementById("allStudentButtons").classList.remove("hidden");
+    document.getElementById("studentManageBtn").classList.remove("hidden");
+  }
+
+  if (tableName === "sch") {
+    document.getElementById("schFormContainer").classList.add("hidden");
+    document.getElementById("schBtnContainer").classList.add("hidden");
+    document.getElementById("allSchButtons").classList.remove("hidden");
+    document.getElementById("scheduleManageBtn").classList.remove("hidden");
+  }
+};

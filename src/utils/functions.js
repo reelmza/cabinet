@@ -1,19 +1,40 @@
-const fs = require('fs')
+const fs = require("fs");
 
 const readUsers = () => {
-    try {
+  try {
+    const getFile = fs.readFileSync(__dirname + "/db/users.json");
+    const buffer = getFile.toString();
 
-        const getFile = fs.readFileSync(__dirname + '/db/users.json')
-        const toText = getFile.toString()
+    return JSON.parse(buffer);
+  } catch (e) {
+    return e;
+  }
+};
 
-        return JSON.parse(toText)
+const readNot = () => {
+  try {
+    const getFile = fs.readFileSync(__dirname + "/db/notification.json");
+    const buffer = getFile.toString();
 
-    } catch (e) {
+    return JSON.parse(buffer);
+  } catch (e) {
+    return e;
+  }
+};
 
-        return e
-    }
-}
+const readSch = () => {
+  try {
+    const getFile = fs.readFileSync(__dirname + "/db/classSchedule.json");
+    const buffer = getFile.toString();
+
+    return JSON.parse(buffer);
+  } catch (e) {
+    return e;
+  }
+};
 
 module.exports = {
-    readUsers: readUsers
-}
+  readUsers: readUsers,
+  readNot: readNot,
+  readSch: readSch,
+};

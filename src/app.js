@@ -39,14 +39,23 @@ app.get("/login", (req, res) => {
   const username = req.query.username;
   const password = req.query.password;
 
+  // Fetch user and find target
   const users = functions.readUsers()[0].users;
   const target = users.find(
     (user) => user.username === username && user.password === password
   );
 
+  // Fetch notifications
+  const notification = functions.readNot();
+
+  // Fetch Schedule
+  const schedule = functions.readSch();
+  const schTarget = schedule.find((item) => item.username === username);
+
   if (target) {
     console.log("user Found");
     return res.send({
+      // User Database
       username: target.username,
       message: "Welcome " + target.name,
       name: target.name,
@@ -55,6 +64,13 @@ app.get("/login", (req, res) => {
       address: target.address || "Not Added",
       phone: target.phone || "Not Added",
       mail: target.mail || "Not Added",
+      password: target.password || "Not Added",
+
+      // Notifiation Dtatabase
+      notification,
+
+      // Schedule Database
+      schedule: schTarget,
     });
   } else {
     console.log("Username or Password incorect");

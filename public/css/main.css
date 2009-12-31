@@ -270,12 +270,25 @@ textarea {
   justify-content: center;
 }
 
+button {
+  box-shadow: none !important;
+}
+
+input:focus,
+select:focus {
+  outline: none !important;
+}
+
+.mw-100 {
+  min-width: 100%;
+}
+
 .section-header {
-  padding-top: 5px;
+  padding: 5px 0px 0px 0px;
   color: #106944;
   background: #ffffff;
 
-  /* border-bottom: solid 1px #d6d6d6; */
+  border-bottom: solid 1px #d6d6d6;
 }
 
 .section {
@@ -289,45 +302,40 @@ textarea {
   box-shadow: #888 0px 0px 2px;
 }
 
-.mw-100 {
-  min-width: 100%;
+.s-light {
+  padding: 20px 0;
 }
 
-.mbutton {
-  background: #106944;
-  color: #fff;
-  font-weight: bold;
+.schedule-time i {
+  font-size: 80%;
 }
 
 /* Sylabble content */
-.section-content div:nth-child(odd) {
-  background: #e4e4e4;
-  padding: 10px 10px;
-}
-
-.section-content div:nth-child(even) {
-  background: #ffffff;
+.section-content div {
   padding: 10px 10px;
 }
 
 /* Header */
 #header-container {
-  background: #ffffff;
-  color: #076447;
+  background: #222;
+  color: #ffffff;
   height: 10vh;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.5vmax;
-
-  border-bottom: solid 1px #747474;
+  padding: 30px 2vmax;
 }
 
 #navigation-desktop a {
-  color: #076447;
+  color: #fff;
   padding: 0 1vmin;
   font-weight: bold;
+  text-decoration: none;
+}
+
+#navigation-desktop a:hover {
+  color: #6bffb5;
 }
 
 #title-text {
@@ -335,9 +343,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding-top: 1vmin;
-  /* background: #000; */
 }
 
 #title-text h2 {
@@ -385,7 +391,7 @@ textarea {
   z-index: 1;
 
   right: 0%;
-  top: 70%;
+  top: 80%;
   padding: 20px;
   min-height: 200%;
   min-width: 130px;
@@ -395,7 +401,7 @@ textarea {
   font-size: 70%;
   line-height: 1.5;
 
-  box-shadow: #333 0px 0px 3px;
+  box-shadow: #181818 1px 1px 6px;
   animation: fade 0.4s;
 
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -532,7 +538,7 @@ textarea {
 
   margin-bottom: 5px;
   color: #fff;
-  background: #076447;
+  background: #222;
 }
 
 #sidebar-box:hover {
@@ -593,13 +599,13 @@ textarea {
   width: 100%;
   margin: auto;
 
-  border-bottom: solid 1px #b6b6b6;
+  /* border-bottom: solid 1px #b6b6b6; */
   line-height: 1;
   /* border-bottom: solid 1px rgb(196, 196, 196); */
 }
 
 #sidebar-item-option:hover {
-  background: #e2e2e2;
+  background: #dfffde;
   cursor: pointer;
 }
 
@@ -701,27 +707,16 @@ main {
 
 #profile-form button {
   width: 100%;
-  padding: 2vmin;
+  padding: 1.4vmin;
   border: none;
 }
 
-#profile-save {
-  background: #58c74e;
-}
-#profile-edit {
-  background: #216fe4 !important;
-  color: white;
-}
-
 /* Class Scedule */
-/* #schedule-box {
-  display: none;
-} */
-
-.s-dark {
-  border-bottom: solid 1px rgb(226, 226, 226);
+.table-form select,
+.table-form input {
+  height: 35px;
+  font-size: 100%;
 }
-
 /* Student Profile */
 #student-profile {
   display: block;
@@ -729,9 +724,24 @@ main {
 
 /* Responsive */
 @media only screen and (max-width: 600px) {
+  .mw-100-sm {
+    min-width: 100%;
+  }
+
+  .monday-item,
+  .tuesday-item,
+  .wednessday-item,
+  .thursday-item,
+  .friday-item {
+    font-size: 80%;
+  }
+
+  .s-light {
+    padding: 13px 0;
+  }
   /* Heade container */
   #header-container {
-    height: 70px;
+    height: 50px;
   }
 
   /* Main Bar */
