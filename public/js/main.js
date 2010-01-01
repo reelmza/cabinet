@@ -138,8 +138,7 @@ const loadBasicData = (data) => {
   distribute(friday, "friday");
 };
 
-// Login functions
-// Display login form & Hide welcome box
+// Login fucntions
 loginButton.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -165,7 +164,6 @@ registerToLogin.addEventListener("click", (e) => {
   loginFormBox.setAttribute("style", "display:flex");
 });
 
-// Login function /LoginForm
 const loginFunction = (username, password) => {
   fetch("/login?username=" + username + "&password=" + password).then(
     (response) => {
@@ -206,7 +204,6 @@ loginForm.addEventListener("submit", (e) => {
 });
 
 // Register functions
-// Display register form & Hide welcome box
 registerButton.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -233,7 +230,6 @@ loginToRegister.addEventListener("click", (e) => {
   registerFormBox.setAttribute("style", "display:flex");
 });
 
-// Register Function
 registerForm.addEventListener("submit", (e) => {
   e.preventDefault();
 });
@@ -242,7 +238,6 @@ registerForm.addEventListener("submit", (e) => {
 const teacherSave = document.querySelector(".saveBtn");
 const teacherForm = document.querySelector("#profile-form");
 
-// Enable disable inputs
 document.querySelector(".editBtn").addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -254,7 +249,7 @@ document.querySelector(".editBtn").addEventListener("click", (e) => {
   teacherSave.setAttribute("style", "color:#fff");
 });
 
-//Edit Function
+// Table Function
 teacherForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -334,3 +329,32 @@ const cancelT = (tableName) => {
     document.getElementById("scheduleManageBtn").classList.remove("hidden");
   }
 };
+
+// Schedule function
+const schAddForm = document.getElementById("schAddForm");
+schAddForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const schDay = document.getElementById("schDay").value;
+  const schPeriod = document.getElementById("schPeriod").value;
+
+  //Add class and Time
+  const schClass = document.getElementById("schClass").value;
+  const schTime = document.getElementById("schTime").value;
+
+  const schContent = schClass + "@" + schTime;
+
+  fetch(
+    "/editSch?schDay=" +
+      schDay +
+      "&schPeriod=" +
+      schPeriod +
+      "&schContent=" +
+      schContent +
+      "&username=a"
+  ).then((response) => {
+    response.json().then((data) => {
+      console.log(data.mesage);
+    });
+  });
+});

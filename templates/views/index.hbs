@@ -302,6 +302,7 @@
 
               {{!-- Buttons --}}
               <div class="row bg-dark mb-0 s-light " id="allSchButtons">
+                {{!-- Manage Button --}}
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                   <button class="btn btn-sm btn-success mw-100" id="scheduleManageBtn"
                     onclick="showTableOptions('scheduleManageBtn', 'schBtnContainer')">
@@ -309,6 +310,7 @@
                   </button>
                 </div>
 
+                {{!-- Button Container --}}
                 <div class="col-12 hidden" id="schBtnContainer">
                   <div class="row">
                     <div class="col-md-3"><button class="btn btn-success btn-sm mb-2 mw-100"
@@ -363,10 +365,10 @@
 
                 {{!-- Edit/Add --}}
                 <div class="col-12 table-form hidden" id="addForm">
-                  <form>
+                  <form id="schAddForm">
                     <div class="row">
                       <div class="col-md-6 mb-2">
-                        <select class="mw-100">
+                        <select class="mw-100" id="schDay">
                           <option value="">Day</option>
                           <option value="monday">Monday</option>
                           <option value="tuesday">Tuesday</option>
@@ -377,16 +379,16 @@
                       </div>
 
                       <div class="col-md-6 mb-2">
-                        <select class="mw-100">
+                        <select class="mw-100 " id="schPeriod">
                           <option value="">Period</option>
-                          <option value="period1">Period 1</option>
-                          <option value="period2">Period 2</option>
-                          <option value="period3">Period 3</option>
+                          <option value="0">Period 1</option>
+                          <option value="1">Period 2</option>
+                          <option value="2">Period 3</option>
                         </select>
                       </div>
 
                       <div class="col-md-6 mb-2">
-                        <select class="mw-100">
+                        <select class="mw-100" id="schClass">
                           <option value="">Class</option>
                           <option value="JSS1">JSS1</option>
                           <option value="JSS2">JSS2</option>
@@ -398,7 +400,7 @@
                       </div>
 
                       <div class="col-md-6 mb-2">
-                        <select class="mw-100">
+                        <select class="mw-100" id="schTime">
                           <option value="">Time</option>
                           <option value="7AM">7AM</option>
                           <option value="8AM">8AM</option>

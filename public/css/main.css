@@ -270,8 +270,17 @@ textarea {
   justify-content: center;
 }
 
-button {
+.btn-primary,
+.btn-success,
+.btn-danger,
+.btn-warning {
+  background: #222;
   box-shadow: none !important;
+  border: none !important;
+}
+
+.btn[disabled] {
+  background: #222;
 }
 
 input:focus,

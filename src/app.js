@@ -131,6 +131,19 @@ app.get("/editUser", (req, res) => {
     });
   }
 });
+
+app.get("/editSch", (req, res) => {
+  const username = req.query.username;
+  const schDay = req.query.schDay;
+  const schPeriod = req.query.schPeriod;
+  const schContent = req.query.schContent;
+
+  const schedule = functions.readSch();
+  const schTarget = schedule.find((item) => item.username === username);
+
+  schTarget[schDay][schPeriod] = schContent;
+  console.log(schTarget);
+});
 // Handle 404 for index
 app.get("/*", (req, res) => {
   res.render("404", {
