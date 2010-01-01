@@ -262,6 +262,12 @@ textarea {
 }
 
 /* Initializations */
+
+#big-container {
+  position: relative;
+  max-width: 100vw;
+  min-height: 100vh;
+}
 #navigation,
 #navigation-desktop,
 #welcome-text {
@@ -476,7 +482,7 @@ select:focus {
 #login-form label,
 #register-form label {
   font-weight: bold;
-  font-size: 3vmin;
+  font-size: 2.3vmin;
   margin: 1vmin 0 1vmin 0;
 }
 #login-form button {
@@ -528,10 +534,13 @@ select:focus {
   width: 100%;
   padding: 2vmin;
   border: none;
-  background: #0b57bb;
   color: #fff;
 
   font-weight: bold;
+}
+.register-col {
+  display: flex;
+  align-items: center;
 }
 
 /* Side Bar */
@@ -731,6 +740,41 @@ main {
   display: block;
 }
 
+#student-profile .py-2 {
+  font-size: 0.9em;
+}
+
+#userAlert {
+  position: fixed;
+  top: 83%;
+  margin-left: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 185px;
+
+  padding: 10px 10px;
+
+  font-weight: bold;
+  text-transform: uppercase;
+
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.userAlertSuccess {
+  background-color: #089939;
+  border: solid 2px #00814b;
+  color: #fff;
+}
+
+.userAlertError {
+  background-color: #b30707;
+  border: solid 2px #5c0808;
+  color: #fff;
+}
+
 /* Responsive */
 @media only screen and (max-width: 600px) {
   .mw-100-sm {
@@ -778,6 +822,12 @@ main {
 
   #dropdown-icon {
     display: inline-block;
+  }
+
+  /* //Student Table */
+
+  .student-table-heading div {
+    font-size: 0.7em;
   }
   /* Sidebar Item Mobile  */
   #sidebar-box-options {

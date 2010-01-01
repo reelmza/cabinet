@@ -88,63 +88,36 @@
       <div id="register-form-box">
         <form id="register-form">
           <div class="row">
-            <div class="col-12 col-sm-4">
-              <label for="register-name">SCHOOL NAME</label>
-              <input type="text" name="register-name" id="register-name" placeholder="EG: Saint James" />
-            </div>
-            <div class="col-12 col-sm-4">
-              <label for="register-type">SCHOOL TYPE</label>
-              <select name="register-type" id="register-type" required>
-                <option value=""></option>
-                <option value="High School"> High School</option>
-                <option value="Primary School"> Primary School</option>
-                <option value="Vocational School"> Vocational School</option>
-              </select>
-            </div>
-            <div class="col-12 col-sm-4">
-              <label for="register-student-number">SCHOOL POPULATION</label>
-              <input type="number" name="register-student-number" id="register-student-number"
-                placeholder="Numbers only" max="800" />
-            </div>
-
-            <div class="w-100"></div>
-
-            <div class="col-12 col-sm-4">
-              <label for="register-staff-population">STAFF POPULATION</label>
-              <input type="number" name="register-staff-number" id="register-staff-number" placeholder="1000 or less" />
-            </div>
-            <div class="col-12 col-sm-4">
+            <div class="col-12 col-sm-6 col-md-4">
               <label for="register-email">E-MAIL</label>
               <input type="email" name="register-email" id="register-email" placeholder="School E-Mail" />
             </div>
-            <div class="col-12 col-sm-4">
+            <div class="col-12 col-sm-6 col-md-4">
               <label for="register-address">ADDRESS</label>
               <input type="text" name="register-address" id="register-address" placeholder="School Address" />
             </div>
 
-            <div class="w-100"></div>
-
-            <div class="col-12 col-sm-4 ">
+            <div class="col-12 col-sm-6 col-md-4">
               <label for="register-username">USERNAME</label>
               <input type="text" name="register-username" id="register-username" placeholder="Username"
                 autocomplete="username">
             </div>
-            <div class="col-12 col-sm-4 ">
+            <div class="col-12 col-sm-6 col-md-4">
               <label for="register-password">PASSWORD</label>
               <input type="password" name="register-password" id="register-password" placeholder="Password"
                 autocomplete="new-password">
             </div>
-            <div class="col-12 col-sm-4 ">
+            <div class="col-12 col-sm-6 col-md-4">
               <label for="register-verify-password">CONFIRM </label>
               <input type="password" name="register-verify-password" id="register-verify-password"
                 placeholder="Verify Password" autocomplete="new-password">
             </div>
 
-            <div class="w-100"></div>
+            <div class="col-12 col-sm-6 col-md-4 register-col">
+              <button class="btn btn-primary" type="submit">REGISTER <i class="fas fa-server"></i></button>
+            </div>
 
-            <div class="col-12 col-sm-4">
-              <button type="submit">REGISTER <i class="fas fa-server"></i></button>
-              <br><br>
+            <div class="col-12 col-sm-6 col-md-4">
               <a href="">Cancel</a><br>
               <a href="#" id="register-login">Already a user? Login here</a>
             </div>
@@ -330,10 +303,10 @@
               <div class="row bg-dark s-light hidden" id="schFormContainer">
                 {{!-- delete --}}
                 <div class="col-12 table-form hidden" id="deleteForm">
-                  <form>
+                  <form id="schDeleteForm">
                     <div class="row">
                       <div class="col-md-6 mb-2">
-                        <select class="mw-100">
+                        <select class="mw-100" id="schDeleteDay">
                           <option value="">Select Day</option>
                           <option value="monday">Monday</option>
                           <option value="tuesday">Tuesday</option>
@@ -344,20 +317,20 @@
                       </div>
 
                       <div class="col-md-6 mb-2">
-                        <select class="mw-100">
+                        <select class="mw-100" id="schDeletePeriod">
                           <option value="">Period</option>
-                          <option value="period1">Period 1</option>
-                          <option value="period2">Period 2</option>
-                          <option value="period3">Period 3</option>
+                          <option value="0">Period 1</option>
+                          <option value="1">Period 2</option>
+                          <option value="2">Period 3</option>
                         </select>
+                      </div>
+
+                      <div class="col-md-6 mb-2">
+                        <span class="mw-100 btn btn-danger btn-sm" onclick="cancelT('sch')">CLOSE</span>
                       </div>
 
                       <div class="col-md-6">
                         <button class="mw-100 btn btn-danger btn-sm" type="submit">DELETE</button>
-                      </div>
-
-                      <div class="col-md-6">
-                        <span class="mw-100 btn btn-danger btn-sm" onclick="cancelT('sch')">CANCEL</span>
                       </div>
                     </div>
                   </form>
@@ -453,57 +426,22 @@
                 </div>
               </div>
 
-              <div class="row py-2">
-                <div class="col-5"><b>Name</b></div>
-                <div class="col-3"><b>Diviation</b></div>
-                <div class="col-2"><b>Age</b></div>
-                <div class="col-2"><b>Att.</b></div>
+              <div class="row py-2 student-table-heading">
+                <div class="col-4"><b>NAME</b></div>
+                <div class="col-2"><b>1<sup>st</sup> C.A</b></div>
+                <div class="col-2"><b>2<sup>nd</sup> C.A</b></div>
+                <div class="col-2"><b>EXAM</b></div>
+                <div class="col-2"><b>TOTAL</b></div>
               </div>
 
-              <div class="row py-2">
-                <div class="col-5">Tony Peter</div>
-                <div class="col-3">Science</div>
-                <div class="col-2">13</div>
-                <div class="col-2">85</div>
-              </div>
+              <div class="row">
+                <div class="col-12" id="student-profile-content">
 
-              <div class="row py-2">
-                <div class="col-5">Tony Peter</div>
-                <div class="col-3">Science</div>
-                <div class="col-2">13</div>
-                <div class="col-2">85</div>
-              </div>
-
-              <div class="row py-2">
-                <div class="col-5">Tony Peter</div>
-                <div class="col-3">Science</div>
-                <div class="col-2">13</div>
-                <div class="col-2">85</div>
-              </div>
-
-              <div class="row py-2">
-                <div class="col-5">Tony Peter</div>
-                <div class="col-3">Science</div>
-                <div class="col-2">13</div>
-                <div class="col-2">85</div>
-              </div>
-
-              <div class="row py-2">
-                <div class="col-5">Tony Peter</div>
-                <div class="col-3">Science</div>
-                <div class="col-2">13</div>
-                <div class="col-2">85</div>
-              </div>
-
-              <div class="row py-2">
-                <div class="col-5">Tony Peter</div>
-                <div class="col-3">Science</div>
-                <div class="col-2">13</div>
-                <div class="col-2">85</div>
+                </div>
               </div>
 
               {{!-- Buttons --}}
-              <div class="row bg-dark mb-0 s-light " id="allStudentButtons">
+              {{!-- <div class="row bg-dark mb-0 s-light " id="allStudentButtons">
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                   <button class="btn btn-sm btn-success mw-100" id="studentManageBtn"
                     onclick="showTableOptions('studentManageBtn', 'studentBtnContainer')">
@@ -524,11 +462,12 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> --}}
 
               {{!-- Forms --}}
-              <div class="row bg-dark s-light hidden" id="studentFormContainer">
-                {{!-- delete --}}
+              {{!-- <div class="row bg-dark s-light hidden" id="studentFormContainer">
+
+
                 <div class="col-12 table-form hidden" id="studentDeleteForm">
                   <form>
                     <div class="row">
@@ -563,7 +502,7 @@
                   </form>
                 </div>
 
-                {{!-- Edit/Add --}}
+
                 <div class="col-12 table-form hidden" id="studentAddForm">
                   <form>
                     <div class="row">
@@ -626,7 +565,7 @@
                   </form>
                 </div>
 
-              </div>
+              </div> --}}
             </div>
 
             <!-- Welcome Box -->
@@ -639,7 +578,6 @@
               </div>
             </div>
           </div>
-          {{!-- -12  -12  --}}
           <!-- Side Bar Contents -->
           <div class="col-12 col-md-4 mt-md-3" id="side-bar">
             <!-- Sidebar Name and Avatar -->
@@ -715,8 +653,15 @@
         </div>
       </div>
     </main>
+
+
+    <div id="userAlert" class="userAlertError hidden">
+      <i class="far fa-check-circle"></i> Save Succesfull
+    </div>
   </div>
 
+  {{!-- Hidden Parameter --}}
+  <button class="hiddenpassword hidden" value=""></button>
   <!-- Javascript -->
   <noscript>
     <style>

@@ -1,5 +1,6 @@
 // Import Libraries
 const express = require("express");
+const chalk = require("chalk");
 const path = require("path");
 const hbs = require("hbs");
 const fs = require("fs");
@@ -35,7 +36,6 @@ app.get("", (req, res) => {
 
 app.get("/login", (req, res) => {
   // Login
-  var error;
   const username = req.query.username;
   const password = req.query.password;
 
@@ -48,12 +48,16 @@ app.get("/login", (req, res) => {
   // Fetch notifications
   const notification = functions.readNot();
 
-  // Fetch Schedule
+  // Fetch schedule
   const schedule = functions.readSch();
   const schTarget = schedule.find((item) => item.username === username);
 
+  // Fetch students
+  const students = functions.students();
+  const studentsTarget = students.find((item) => item.username === username);
+
   if (target) {
-    console.log("user Found");
+    console.log(chalk.yellow("User Found || Refresh Successfull"));
     return res.send({
       // User Database
       username: target.username,
@@ -71,10 +75,13 @@ app.get("/login", (req, res) => {
 
       // Schedule Database
       schedule: schTarget,
+
+      // students Database
+      students: studentsTarget,
     });
   } else {
-    console.log("Username or Password incorect");
-    res.send({ error: "Username or Password incorect" });
+    console.log(chalk.red("Username || Password incorect"));
+    res.send({ error: "Username || Password incorect" });
   }
 });
 
@@ -142,9 +149,45 @@ app.get("/editSch", (req, res) => {
   const schTarget = schedule.find((item) => item.username === username);
 
   schTarget[schDay][schPeriod] = schContent;
-  console.log(schTarget);
+  const editedData = JSON.stringify(schedule);
+
+  fs.writeFileSync(
+    __dirname + "/utils/db/classSchedule.json",
+    editedData,
+    "utf-8"
+  );
+
+  res.send({
+    message: "Successfully modified entries!",
+  });
 });
-// Handle 404 for index
+
+app.get("/deleteSch", (req, res) => {
+  const username = req.query.username;
+  const period = req.query.period;
+  const day = req.query.day;
+
+  const schedule = functions.readSch();
+  const target = schedule.find((item) => item.username === username);
+
+  target[day][period] = "Free@Period";
+
+  const newData = JSON.stringify(schedule);
+
+  fs.writeFileSync(
+    __dirname + "/utils/db/classSchedule.json",
+    newData,
+    "utf-8"
+  );
+  res.send({
+    message: "Route listening!",
+  });
+});
+// Handle 404 & App listen
+// ...
+// ...
+// ...
+
 app.get("/*", (req, res) => {
   res.render("404", {
     name: "CABINET",

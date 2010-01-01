@@ -47,7 +47,7 @@ const checkCookie = () => {
     const cookieUsername = usernameArray[1];
     const cookiePassword = passwordArray[1];
 
-    // Cookie isswapped after browser resets, so use below function
+    // Cookie is swapped after browser resets, so use below function
     if (usernameArray[0] === "username") {
       loginFunction(cookieUsername, cookiePassword);
     } else {
@@ -108,6 +108,11 @@ const loadBasicData = (data) => {
     .querySelector(".teacher-f-username")
     .setAttribute("value", data.username);
 
+  // password
+  document
+    .querySelector(".hiddenpassword")
+    .setAttribute("value", data.password);
+
   // Notification
   const not = document.querySelectorAll(".notification-item");
   const notLength = not.length - 1;
@@ -136,6 +141,40 @@ const loadBasicData = (data) => {
   distribute(wednessday, "wednessday");
   distribute(thursday, "thursday");
   distribute(friday, "friday");
+
+  // Students Table
+  const student = data.students.students;
+  const studentTable = document.getElementById("student-profile-content");
+  studentTable.innerHTML = "";
+
+  // console.log(student);
+
+  for (var i = 0; i < student.length && i < 50; i++) {
+    const sesionTotal =
+      student[i].firstCA + student[i].secondCA + student[i].exam;
+
+    const fullName = student[i].firstName + " " + student[i].secondName;
+
+    studentTable.innerHTML =
+      studentTable.innerHTML +
+      "<div class='row py-2'>" +
+      "<div class='col-4'>" +
+      fullName +
+      "</div>" +
+      "<div class='col-2'>" +
+      student[i].firstCA +
+      "</div>" +
+      "<div class='col-2'>" +
+      student[i].secondCA +
+      "</div>" +
+      "<div class='col-2'>" +
+      student[i].exam +
+      "</div>" +
+      "<div class='col-2'>" +
+      sesionTotal +
+      "</div>" +
+      "</div>";
+  }
 };
 
 // Login fucntions
@@ -254,6 +293,8 @@ teacherForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const username = document.querySelector(".teacher-f-username").value;
+  const password = document.querySelector(".hiddenpassword").value;
+
   const name = document.querySelector(".teacher-f-name").value.toUpperCase();
   const age = document.querySelector(".teacher-f-age").value;
   const address = document.querySelector(".teacher-f-address").value;
@@ -279,7 +320,7 @@ teacherForm.addEventListener("submit", (e) => {
   ).then((response) => {
     response.json().then((data) => {
       if (data.success) {
-        loadBasicData(data.newInfo);
+        loginFunction(username, password);
       } else {
         console.log("Failed");
       }
@@ -332,8 +373,14 @@ const cancelT = (tableName) => {
 
 // Schedule function
 const schAddForm = document.getElementById("schAddForm");
+const schDeleteForm = document.getElementById("schDeleteForm");
+
 schAddForm.addEventListener("submit", (e) => {
   e.preventDefault();
+
+  // Username & Password
+  const password = document.querySelector(".hiddenpassword").value;
+  const username = document.querySelector(".teacher-f-username").value;
 
   const schDay = document.getElementById("schDay").value;
   const schPeriod = document.getElementById("schPeriod").value;
@@ -343,7 +390,9 @@ schAddForm.addEventListener("submit", (e) => {
   const schTime = document.getElementById("schTime").value;
 
   const schContent = schClass + "@" + schTime;
-
+  if (!schTime || !schClass || !schDay || !schPeriod) {
+    return console.log("Enter All Fields!");
+  }
   fetch(
     "/editSch?schDay=" +
       schDay +
@@ -351,10 +400,45 @@ schAddForm.addEventListener("submit", (e) => {
       schPeriod +
       "&schContent=" +
       schContent +
-      "&username=a"
+      "&username=" +
+      username
   ).then((response) => {
     response.json().then((data) => {
-      console.log(data.mesage);
+      console.log(data.message);
+      loginFunction(username, password);
+    });
+  });
+});
+
+schDeleteForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  // Username & Password
+  const password = document.querySelector(".hiddenpassword").value;
+  const username = document.querySelector(".teacher-f-username").value;
+
+  const day = document.getElementById("schDeleteDay").value;
+  const period = document.getElementById("schDeletePeriod").value;
+  if (!day || !period) {
+    return console.log("Fill out all fields!");
+  }
+
+  console.log(day, period);
+
+  fetch(
+    "/deleteSch?username=" +
+      username +
+      "&password=" +
+      password +
+      "&day=" +
+      day +
+      "&period=" +
+      period
+  ).then((response) => {
+    response.json().then((data) => {
+      console.log(data);
+
+      loginFunction(username, password);
     });
   });
 });

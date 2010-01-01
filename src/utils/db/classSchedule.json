@@ -1,18 +1,1 @@
-[
-  {
-    "username": "a",
-    "monday": ["SS3@2:00", "SS2@1:00", "SS1@6:00"],
-    "tuesday": ["JSS1@4:00", "PRI1@8:00", "SS3@2:00"],
-    "wednessday": ["SS1@7:00", "PRI2@:4:00", "PRI1@9:00"],
-    "thursday": ["JSS1@3:00", "PRI1@5:30", "SS3@7:45"],
-    "friday": ["SS3@8:30", "SS2@10:00", "SS1@1:15"]
-  },
-  {
-    "username": "b",
-    "monday": ["SS3@2:00", "SS2@1:00", "SS1@6:00"],
-    "tuesday": ["JSS1@4:00", "PRI1@8:00", "SS3@2:00"],
-    "wednessday": ["SS1@7:00", "PRI2@:4:00", "PRI1@9:00"],
-    "thursday": ["JSS1@3:00", "PRI1@5:30", "SS3@7:45"],
-    "friday": ["SS3@8:30", "SS2@10:00", "SS1@1:15"]
-  }
-]
+[{"username":"a","monday":["JSS1@2PM","JSS2@8AM","JSS2@3PM"],"tuesday":["JSS1@4:00","JSS1@3PM","SS3@2:00"],"wednessday":["SS1@7:00","PRI2@:4:00","PRI1@9:00"],"thursday":["JSS1@3:00","PRI1@5:30","SS3@7:45"],"friday":["SS3@8:30","SS2@10:00","SS1@1:15"]},{"username":"b","monday":["SS3@2:00","SS2@1:00","SS1@6:00"],"tuesday":["JSS1@4:00","PRI1@8:00","SS3@2:00"],"wednessday":["SS1@7:00","PRI2@:4:00","PRI1@9:00"],"thursday":["JSS1@3:00","PRI1@5:30","SS3@7:45"],"friday":["SS3@8:30","SS2@10:00","SS1@1:15"]}]

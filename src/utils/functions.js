@@ -33,8 +33,20 @@ const readSch = () => {
   }
 };
 
+const students = () => {
+  try {
+    const getFile = fs.readFileSync(__dirname + "/db/students.json");
+    const buffer = getFile.toString();
+
+    return JSON.parse(buffer);
+  } catch (e) {
+    return e;
+  }
+};
+
 module.exports = {
   readUsers: readUsers,
   readNot: readNot,
   readSch: readSch,
+  students: students,
 };
