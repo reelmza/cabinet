@@ -731,7 +731,9 @@ main {
 
 /* Class Scedule */
 .table-form select,
-.table-form input {
+.table-form input,
+.table-form span,
+.table-form button {
   height: 35px;
   font-size: 100%;
 }
@@ -743,6 +745,11 @@ main {
 #student-profile .py-2 {
   font-size: 0.9em;
 }
+
+#studentForm .row .col {
+  margin-bottom: 10px;
+}
+/* User Alert */
 #userAlert i {
   margin-right: 5px;
 }
