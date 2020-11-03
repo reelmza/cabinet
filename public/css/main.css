@@ -743,16 +743,19 @@ main {
 #student-profile .py-2 {
   font-size: 0.9em;
 }
-
+#userAlert i {
+  margin-right: 5px;
+}
 #userAlert {
   position: fixed;
-  top: 83%;
+  top: 88%;
   margin-left: 2vw;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
-  width: 185px;
+  min-width: 200px;
+  font-size: 90%;
 
   padding: 10px 10px;
 
@@ -761,6 +764,8 @@ main {
 
   border-radius: 5px;
   z-index: 1;
+
+  animation: fade 0.5s;
 }
 
 .userAlertSuccess {
@@ -791,6 +796,10 @@ main {
 
   .s-light {
     padding: 13px 0;
+  }
+
+  #userAlert {
+    top: 90%;
   }
   /* Heade container */
   #header-container {

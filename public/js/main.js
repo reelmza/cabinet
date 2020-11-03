@@ -177,6 +177,33 @@ const loadBasicData = (data) => {
   }
 };
 
+const toast = (alertType, alertMessage) => {
+  const alertBox = document.getElementById("userAlert");
+  if (alertType === "success") {
+    alertBox.classList.remove("hidden");
+    alertBox.classList.remove("userAlertError");
+    alertBox.classList.add("userAlertSuccess");
+
+    alertBox.innerHTML = "<i class='far fa-check-circle'></i> " + alertMessage;
+
+    setTimeout(() => {
+      alertBox.classList.add("hidden");
+    }, 3000);
+  }
+
+  if (alertType === "error") {
+    alertBox.classList.remove("hidden");
+    alertBox.classList.remove("userAlertSuccess");
+    alertBox.classList.add("userAlertError");
+
+    alertBox.innerHTML = "<i class='far fa-times-circle'></i> " + alertMessage;
+
+    setTimeout(() => {
+      alertBox.classList.add("hidden");
+    }, 3000);
+  }
+};
+
 // Login fucntions
 loginButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -288,14 +315,16 @@ document.querySelector(".editBtn").addEventListener("click", (e) => {
   teacherSave.setAttribute("style", "color:#fff");
 });
 
-// Table Function
 teacherForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const username = document.querySelector(".teacher-f-username").value;
   const password = document.querySelector(".hiddenpassword").value;
 
-  const name = document.querySelector(".teacher-f-name").value.toUpperCase();
+  const name = document
+    .querySelector(".teacher-f-name")
+    .value.replace(/[^a-zA-Z]/g, " ")
+    .toUpperCase();
   const age = document.querySelector(".teacher-f-age").value;
   const address = document.querySelector(".teacher-f-address").value;
   const feild = document.querySelector(".teacher-f-feild").value;
@@ -321,6 +350,7 @@ teacherForm.addEventListener("submit", (e) => {
     response.json().then((data) => {
       if (data.success) {
         loginFunction(username, password);
+        toast("success", "Modified Entries");
       } else {
         console.log("Failed");
       }
@@ -328,6 +358,7 @@ teacherForm.addEventListener("submit", (e) => {
   });
 });
 
+// Table Function
 const showTableOptions = (manageBtn, btnContainer) => {
   document.getElementById(manageBtn).classList.add("hidden");
   document.getElementById(btnContainer).classList.remove("hidden");
@@ -391,6 +422,7 @@ schAddForm.addEventListener("submit", (e) => {
 
   const schContent = schClass + "@" + schTime;
   if (!schTime || !schClass || !schDay || !schPeriod) {
+    toast("error", "Enter All Fields");
     return console.log("Enter All Fields!");
   }
   fetch(
@@ -406,6 +438,8 @@ schAddForm.addEventListener("submit", (e) => {
     response.json().then((data) => {
       console.log(data.message);
       loginFunction(username, password);
+
+      toast("success", "Modified Classes");
     });
   });
 });
@@ -419,12 +453,16 @@ schDeleteForm.addEventListener("submit", (e) => {
 
   const day = document.getElementById("schDeleteDay").value;
   const period = document.getElementById("schDeletePeriod").value;
-  if (!day || !period) {
+  if (!day) {
+    toast("error", "Enter A day ");
     return console.log("Fill out all fields!");
   }
 
-  console.log(day, period);
+  if (!period) {
+    return toast("error", "Enter A Period ");
+  }
 
+  // console.log(day, period);
   fetch(
     "/deleteSch?username=" +
       username +
@@ -436,9 +474,8 @@ schDeleteForm.addEventListener("submit", (e) => {
       period
   ).then((response) => {
     response.json().then((data) => {
-      console.log(data);
-
       loginFunction(username, password);
+      toast("success", "Entry Deleted");
     });
   });
 });
