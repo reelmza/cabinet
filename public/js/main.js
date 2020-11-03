@@ -242,7 +242,7 @@ loginForm.addEventListener("submit", (e) => {
   loginFunction(formUsername, formPassword);
 });
 
-// Register functions
+// Register functions bro
 registerButton.addEventListener("click", (e) => {
   e.preventDefault();
 
