@@ -183,9 +183,119 @@ app.get("/deleteSch", (req, res) => {
     message: "Route listening!",
   });
 });
+
+app.get("/studentAdd", (req, res) => {
+  const firstName = req.query.firstName;
+  const secondName = req.query.secondName;
+  const firstCA = req.query.firstCA;
+  const secondCA = req.query.secondCA;
+  const exam = req.query.exam;
+  const username = req.query.username;
+  const studentType = req.query.studentType;
+
+  // Fetch students
+  const students = functions.students();
+  const teacherTarget = students.find((item) => item.username === username);
+
+  const studentTarget = teacherTarget.students;
+  const target = studentTarget.find(
+    (student) =>
+      student.firstName === firstName && student.secondName === secondName
+  );
+
+  // Check if the student exist
+  if (studentType === "OLD" && !target) {
+    console.log("Student Not Found");
+    return res.send({
+      error: "Student Not Found",
+    });
+  }
+
+  if (studentType === "NEW" && target) {
+    console.log("Same name Exist");
+    return res.send({
+      error: "Same Name Exist",
+    });
+  }
+
+  // If student exist check if he's new
+  if (studentType === "NEW") {
+    studentTarget.push({
+      firstName,
+      secondName,
+      firstCA: parseInt(firstCA, 10),
+      secondCA: parseInt(secondCA, 10),
+      exam: parseInt(exam, 10),
+    });
+
+    const newData = JSON.stringify(students);
+    fs.writeFileSync(__dirname + "/utils/db/students.json", newData, "utf-8");
+
+    return res.send({
+      success: "Added New Student",
+    });
+  } else {
+    if (firstName) {
+      target.firstName = firstName;
+    }
+    if (secondName) {
+      target.secondName = secondName;
+    }
+    if (firstCA) {
+      target.firstCA = parseInt(firstCA, 10);
+    }
+    if (secondCA) {
+      target.secondCA = parseInt(secondCA, 10);
+    }
+    if (exam) {
+      target.exam = parseInt(exam, 10);
+    }
+
+    const newData = JSON.stringify(students);
+    fs.writeFileSync(__dirname + "/utils/db/students.json", newData, "utf-8");
+
+    return res.send({
+      success: "Modified Entries!",
+    });
+  }
+});
+
+app.get("/studentDelete", (req, res) => {
+  const username = req.query.username;
+  const firstName = req.query.firstName;
+  const secondName = req.query.secondName;
+
+  // Fetch Students
+  const students = functions.students();
+  const teacherTarget = students.find((item) => item.username === username);
+
+  const target = teacherTarget.students;
+
+  // Check if student exist
+  const studentToDelete = target.find(
+    (item) => item.firstName === firstName && item.secondName === secondName
+  );
+
+  if (!studentToDelete) {
+    return res.send({
+      error: "User not found!",
+    });
+  }
+
+  // Users to keep
+  const studentsToKeep = target.filter(
+    (item) => item.firstName !== firstName && item.secondName !== secondName
+  );
+
+  teacherTarget.students = studentsToKeep;
+  const newData = JSON.stringify(students);
+
+  fs.writeFileSync(__dirname + "/utils/db/students.json", newData, "utf-8");
+  return res.send({
+    success: "Deleted Successfully",
+  });
+});
 // Handle 404 & App listen
-// ...
-// ...
 // ...
 
 app.get("/*", (req, res) => {

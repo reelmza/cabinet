@@ -484,13 +484,7 @@
                     <div class="col-md-3">
                       <button class="btn btn-success btn-sm mb-2 mw-100"
                         onclick="showAdd('studentBtnContainer', 'studentFormContainer', 'studentAddForm', 'allStudentButtons', 'studentDeleteForm')">
-                        <i class="fas fa-plus"></i> Add
-                      </button>
-                    </div>
-                    <div class="col-md-3">
-                      <button class="btn btn-primary btn-sm mb-2 mw-100"
-                        onclick="showAdd('studentBtnContainer', 'studentFormContainer', 'studentAddForm', 'allStudentButtons', 'studentDeleteForm')">
-                        <i class="fas fa-pen-alt"></i> Edit
+                        <i class="fas fa-plus"></i> Add <i class="fas fa-pen-alt" style="padding-left: 3px;"></i> Edit
                       </button>
                     </div>
                     <div class="col-md-3">
@@ -507,10 +501,15 @@
               <div class="row bg-dark s-light hidden" id="studentFormContainer">
 
                 <div class="col-12 table-form hidden" id="studentDeleteForm">
-                  <form>
+                  <form id="tableDeleteForm">
                     <div class="row">
                       <div class="col-12 col-md-6 col-lg-4 mb-2">
-                        <input type="text" placeholder="First Name" class="mw-100" />
+                        <input type="text" placeholder="First Name" class="mw-100 studentDeleteName" />
+                      </div>
+
+
+                      <div class="col-12 col-md-6 col-lg-4 mb-2">
+                        <input type="text" placeholder="Second Name" class="mw-100 studentDeleteName" />
                       </div>
 
                       <div class="col-12 col-md-6 col-lg-4 mb-2">
@@ -529,31 +528,39 @@
 
 
                 <div class="col-12 table-form hidden" id="studentAddForm">
-                  <form id="studentForm">
+                  <form id="tableAddForm">
                     <div class="row">
                       <div class="col">
-                        <input type="text" placeholder="First Name" class="mw-100">
+                        <input type="text" placeholder="First Name" class="mw-100 studentFirstName">
+                      </div>
+
+                      <div class="col mb-2">
+                        <input type="text" placeholder="Last Name" class="mw-100 studentSecondName">
                       </div>
 
 
-                      <div class="col">
-                        <input type="text" placeholder="Last Name" class="mw-100">
+                      <div class="col mb-2">
+                        <input type="number" placeholder="First CA" class="mw-100 firstCA" max="10">
+                      </div>
+
+                      <div class="col mb-2">
+                        <input type="number" placeholder="Second CA" class="mw-100 secondCA" max="10">
+                      </div>
+
+                      <div class="col mb-2">
+                        <input type="number" placeholder="Exam" class="mw-100 exam" max="70">
                       </div>
 
 
-                      <div class="col">
-                        <input type="number" placeholder="First CA" class="mw-100" max="10">
+                      <div class="col mb-2">
+                        <select class="mw-100 studentType" required>
+                          <option value="">Student Type</option>
+                          <option value="NEW">New Student</option>
+                          <option value="OLD">Existing Student</option>
+                        </select>
                       </div>
 
-                      <div class="col">
-                        <input type="number" placeholder="Second CA" class="mw-100" max="10">
-                      </div>
-
-                      <div class="col">
-                        <input type="text" placeholder="Exam" class="mw-100">
-                      </div>
-
-                      <div class="col">
+                      <div class="col mb-2">
                         <span class="mw-100 btn btn-danger btn-sm" onclick="cancelT('student')"><i
                             class="far fa-times-circle"></i> CLOSE
                         </span>

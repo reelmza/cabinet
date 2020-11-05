@@ -479,3 +479,93 @@ schDeleteForm.addEventListener("submit", (e) => {
     });
   });
 });
+
+// Student form
+const tableAddForm = document.getElementById("tableAddForm");
+const tableDeleteForm = document.getElementById("tableDeleteForm");
+
+tableAddForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const firstName = document
+    .getElementsByClassName("studentFirstName")[0]
+    .value.replace(/[^a-zA-Z]/g, "")
+    .toUpperCase();
+
+  const secondName = document
+    .getElementsByClassName("studentSecondName")[0]
+    .value.replace(/[^a-zA-Z]/g, "")
+    .toUpperCase();
+
+  const firstCA = document.getElementsByClassName("firstCA")[0].value;
+  const secondCA = document.getElementsByClassName("secondCA")[0].value;
+  const exam = document.getElementsByClassName("exam")[0].value;
+  const studentType = document.getElementsByClassName("studentType")[0].value;
+
+  const username = document.getElementsByClassName("teacher-f-username")[0]
+    .value;
+  const password = document.querySelector(".hiddenpassword").value;
+
+  fetch(
+    "/studentAdd?firstName=" +
+      firstName +
+      "&secondName=" +
+      secondName +
+      "&firstCA=" +
+      firstCA +
+      "&secondCA=" +
+      secondCA +
+      "&exam=" +
+      exam +
+      "&username=" +
+      username +
+      "&studentType=" +
+      studentType
+  ).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        console.log(data.error);
+        return toast("error", data.error);
+      }
+      loginFunction(username, password);
+      console.log(data.success);
+
+      return toast("success", data.success);
+    });
+  });
+});
+
+tableDeleteForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const firstName = document
+    .getElementsByClassName("studentDeleteName")[0]
+    .value.replace(/[^a-zA-Z]/g, "")
+    .toUpperCase();
+  const secondName = document
+    .getElementsByClassName("studentDeleteName")[1]
+    .value.replace(/[^a-zA-Z]/g, "")
+    .toUpperCase();
+
+  const username = document.getElementsByClassName("teacher-f-username")[0]
+    .value;
+  const password = document.querySelector(".hiddenpassword").value;
+
+  fetch(
+    "/studentDelete?firstName=" +
+      firstName +
+      "&secondName=" +
+      secondName +
+      "&username=" +
+      username
+  ).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        return toast("error", data.error);
+      }
+
+      toast("success", data.success);
+      return loginFunction(username, password);
+    });
+  });
+});
