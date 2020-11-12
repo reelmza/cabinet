@@ -1,0 +1,21 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local":"nodemon src/app.js -e js,hbs"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "express": "^4.17.1",
+    "hbs": "^4.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

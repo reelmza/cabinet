@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    <Jesse Moses> -- <Develeoper> -- <reelmza>
+
+# THANKS
+
+    <name>
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, Javascript
+    Apache Server Configs, jQuery, Modernizr, Normalize.css

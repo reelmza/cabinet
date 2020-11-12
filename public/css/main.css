@@ -1,0 +1,797 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* Initializations */
+#navigation, #navigation-desktop, #welcome-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-header {
+  padding-top: 5px;
+  border-bottom: solid 2px #d6d6d6;
+  color: #106944;
+  background: #fff;
+}
+
+.section {
+  margin:0px;
+  background: #ffffff;
+  overflow: hidden;
+
+  border: solid 2px #d6d6d6;
+  /* box-shadow: #303030 0px 0px 3px; */
+  border-radius: 5px;
+}
+
+.mw-100 {
+  min-width:100%
+}
+
+/* Header */
+#header-container  {
+  background: #ffffff;
+  color: #076447;
+  height:10vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5vmax;
+
+  box-shadow: #777 0px 0.8px 2px;
+  /* border-bottom: solid 1px #777; */
+}
+
+#navigation-desktop a {
+  color: #076447;
+  padding: 0 1vmin;
+  font-weight: bold;
+}
+
+#title-text {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 1vmin;
+  /* background: #000; */
+}
+
+#title-text h2 {
+  font-size:175%;
+  margin-top: 5x;
+}
+
+/* Navigation */
+#navigation {
+  height: 100%;
+}
+
+#navigation-desktop{
+  font-size: 3vmin;
+}
+
+#navigation-icons {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+#dropdown-icon {
+  display: none;
+}
+
+/* App Forms */
+#app-forms {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 5vmin 0;
+  height: 100vh;
+}
+
+/* Login Form */
+#login-form-box {
+  height: 100%;
+  width: 100%;
+
+  display: none;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+#login-form {
+  /* background: chartreuse; */
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+#login-username, #login-password, #login-type {
+  margin-bottom:1vh ;
+  padding: 2vmin;
+
+  border: solid 1.9px #747474;
+  color: #363636;
+  border-radius: 3px;
+}
+
+#login-form #login-username:valid, #login-form #login-password:valid {
+  margin-bottom:1vh ;
+  padding: 2vmin;
+
+  border: solid 1.9px #6623b3;
+  color: #363636;
+  border-radius: 3px;
+}
+
+#login-form label, #register-form label {
+  font-weight: bold;
+  font-size: 3vmin;
+  margin: 1vmin 0 1vmin 0;
+
+}
+#login-form button {
+  padding: 2vmin;
+  background: #531c92;
+  font-weight: bold;
+  color: #ffffff;
+
+  outline: none;
+  border: 0px;
+  border-radius: 3px;
+}
+
+#login-form button:hover {
+  background:#6623b3;
+}
+
+#login-alternatives a{
+  color: #6623b3;
+}
+#form-image {
+  height: 30vmin;
+  width: 30vmin;
+  background: #222;
+  border-radius: 50%;
+
+  margin-bottom: 2vmin;
+}
+
+/* Register Form */
+#register-form-box {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  line-height: 1.0;
+  width: 80%;
+}
+
+#register-form input, #register-form select {
+  width: 100%;
+  padding: 2vmin;
+  margin-bottom: 4vmin;
+}
+
+#register-form button {
+  width: 100%;
+  padding: 2vmin;
+  border:none;
+  background: #0b57bb;
+  color: #fff;
+
+  font-weight: bold;
+}
+
+
+/* Side Bar */
+#side-bar{
+  display: flex;
+  flex-direction: column;
+}
+
+#sidebar-box {
+  height: 15vmin;
+  cursor: pointer;
+  
+  margin-bottom: 5px;
+  color: #fff;
+  background: #076447;
+  
+}
+
+#sidebar-box:hover{
+  background: #111;
+  color: #ffffff;
+}
+
+#sidebar-item {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  
+  height: inherit;
+  width: 100%;
+  margin: auto;
+
+
+  /* border-bottom: solid 1px rgb(196, 196, 196); */
+}
+
+#avatar-image {
+  height: 8vmin;
+  width: 8vmin;
+  background: url('../img/siteImages/user.png') center;
+  border-radius: 50%;
+}
+
+#user-name {
+  margin-left:3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+#name h5 b{
+  font-size: 90%;
+  margin: 0px;
+  padding: 0px;
+}
+
+#title{
+  margin: 0px;
+  padding: 0px;
+
+  margin-top: -5px;
+}
+
+/* Sidebar Options  */
+#sidebar-box-options {
+  height: 10vmin;
+  
+}
+
+#sidebar-item-option {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  
+  height: inherit;
+  width: 100%;
+  margin: auto;
+
+  border-bottom: solid 1px #b6b6b6;
+  line-height: 1.0;
+  /* border-bottom: solid 1px rgb(196, 196, 196); */
+}
+
+#sidebar-item-option:hover{
+  background: #e2e2e2;
+  cursor: pointer;
+}
+
+#option-name h5{
+  font-size: 3.4vmin;
+}
+
+#option-description {
+  font-size: 2.6vmin;
+}
+
+#icon-box {
+  height: 5vmin;
+  width: 5vmin;
+
+  /* background: blue; */
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sidebar-icon{
+  font-size: 5vmin;
+}
+
+/* Main Bar */
+/* #main-bar {
+  
+} */
+
+main {
+  min-height: 90vh;
+  border-right: solid 1px #cacaca;
+}
+
+/* Welcome Box */
+#welcome-box {
+  height: 90vh;
+  width: 100%;
+
+  display: none;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+#welcome-box-img {
+  background: url('../img/siteImages/welcome.svg') bottom no-repeat;
+  background-size: 80vmin;
+
+  height: 80%;
+  width: 100%;
+}
+
+#welcome-text {
+  height: 30%;
+  width: 100%;
+  color: #b1b1b1;
+  text-align: center;
+  cursor: pointer;
+
+  align-items: start;
+}
+
+/* Teacher Profile Box */
+#profile-box {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  line-height: 1.0;
+  /* background: #eee; */
+}
+
+#profile-image {
+  height: 30vmin;
+  width: 30vmin;
+  background: #222;
+  border-radius: 50%;
+
+  margin-bottom: 2vmin;
+}
+#profile-bio {
+  text-align:center;
+}
+
+#profile-form {
+  width: 100%;
+}
+
+
+#profile-form input {
+  width: 100%;
+  padding: 1vmin;
+  margin-bottom: 2vmin;
+}
+
+#profile-form button{
+  width: 100%;
+  padding: 2vmin;
+  border:none;
+  background: #d0ffcc;
+}
+
+#profile-edit {
+  background: #216fe4 !important;
+  color: white;
+}
+
+/* Class Scedule */
+#schedule-box {
+  display: none;
+}
+#schedule-header {
+  background: #36175A;
+}
+
+.s-dark {
+  background: #dadada;
+}
+
+/* Student Profile */
+#student-profile {
+  display: none;
+}
+
+/* Sylabble content */
+.sylable-content div:nth-child(odd), .notification-content div:nth-child(odd) {
+  background: #fff;
+  padding: 10px 10px;
+}
+
+.sylable-content div:nth-child(even), .notification-content div:nth-child(even) {
+  background: #d8d8d8;
+  padding: 10px 10px;
+}
+/* Responsive */
+@media only screen and  (max-width: 600px) {
+  /* Heade container */
+  #header-container {
+    height: 70px;
+  }
+
+  /* Main Bar */
+  #welcome-box-img {
+    background: url('../img/siteImages/welcome.svg') center no-repeat;
+    background-size: 80vmin;
+
+    height: 40%;
+  }
+
+  #welcome-text {
+    height: 10%;
+  }
+  #user-dropdown, #main-dropdown {
+    height: 13%;
+    width: 40%;
+    background: #ffffff;
+    margin: 5px 0px 5px 59.0%;
+  }
+
+  #navigation-desktop{
+    display: none;
+  }
+
+  #dropdown-icon {
+    display: inline-block;
+  }
+  /* Sidebar Item Mobile  */
+  #sidebar-box-options {
+    height: 12vmin;
+    line-height: 1.5;
+  }
+
+  #option-name h5{
+    font-size: 3.8vmin;
+  }
+  
+  #option-description {
+    font-size: 2.8vmin;
+    margin-top: 0.3vmin;
+  }
+  
+  /* Login Form */
+  #login-form {
+    width: 75%;
+  }
+
+  #login-form-box {
+    height: 100vh;
+  }
+  #form-image {
+    height: 25vmin;
+    width: 25vmin;
+    background: #222;
+    border-radius: 50%;
+  
+    margin-bottom: 5vmin;
+  }
+
+  /* Profile Form */
+  #profile-form{
+    width: 90%;
+  }
+
+  #profile-form input {
+    margin-bottom: 3vmin;
+  }
+
+  #app-forms {
+    height: unset;
+  }
+}
+
+@keyframes fade {
+  0% {opacity: 0;}
+  100%{opacity:1}
+}
+
+#sign-in-icon, #dropdown-icon {
+  position: relative;
+}
+
+#sign-in-icon:hover #sign-in-content, #dropdown-icon:hover #dropdown-content {
+  display: block;
+  overflow: auto;
+}
+
+#sign-in-content:hover {
+  display: block;
+}
+
+#sign-in-content, #dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+
+  right: 0%;
+  top: 70%;
+  padding: 20px;
+  min-height: 200%;
+  min-width: 130px;
+  background: #fff;
+  color: #333;
+  padding: 10px;
+  font-size: 70%;
+  line-height: 1.5;
+
+  box-shadow: #333 0px 0px 3px;
+  animation: fade 0.4s;
+
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#dropdown-content a {
+  color: #076447;
+}
