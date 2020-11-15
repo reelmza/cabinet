@@ -1,18 +1,12 @@
-// Welcome Box elements
-const welcomeBox = document.querySelector("#welcome-box");
-
 // Login Form elements
-const loginButton = document.querySelector("#login-button");
-const loginFormBox = document.querySelector("#login-form-box");
 const loginForm = document.querySelector("#login-form");
-const loginToRegister = document.querySelector("#login-register-link");
 const loginError = document.querySelector(".myAlert");
 
 // LoginForm Data
-var loginUsername = document.querySelector("#login-username");
-var loginPassword = document.querySelector("#login-password");
-const loginPerson = document.querySelector("#login-type");
+var loginUsername = document.getElementsByClassName("login-username")[0];
+var loginPassword = document.getElementsByClassName("login-password")[0];
 
+console.log(loginUsername, loginPassword);
 // Register Form elements
 const registerButton = document.querySelector("#register-button");
 const registerFormBox = document.querySelector("#register-form-box");
@@ -21,21 +15,13 @@ const registerToLogin = document.querySelector("#register-login");
 
 // Main
 const main = document.querySelector("#main");
-const appForms = document.querySelector("#app-forms");
+const bigContainer = document.getElementById("big-container");
+const preEntry = document.getElementById("pre-entry");
 
 // Header Container
 const headerContainer = document.querySelector("#header-container");
 const sideBar = document.querySelector("#side-bar");
 const mainBar = document.querySelector("#main-bar");
-
-// Register /Login dropdown
-const dropDownCaller = document.querySelector("#sign-in-icon");
-const closeDropdown = document.querySelector("#close-dropdown");
-
-// Main Drop Down
-const mainDropdown = document.querySelector("#main-dropdown");
-const dropDownIcon = document.querySelector("#dropdown-icon");
-const closeMainDropdown = document.querySelector("#close-main-dropdown");
 
 // Global Funtions
 const checkCookie = () => {
@@ -55,6 +41,8 @@ const checkCookie = () => {
     }
   } else {
     console.log("No cookie");
+    bigContainer.classList.add("hidden");
+    preEntry.classList.remove("hidden");
   }
 };
 
@@ -204,49 +192,21 @@ const toast = (alertType, alertMessage) => {
   }
 };
 
-// Login fucntions
-loginButton.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  //Hide dull main container
-  main.setAttribute("style", "display:none;");
-  appForms.setAttribute("style", "display:flex;");
-  headerContainer.setAttribute("style", "display:none;");
-
-  //Show login form
-  loginFormBox.setAttribute("style", "display:flex");
-});
-
-registerToLogin.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  //Hide dull main container
-  main.setAttribute("style", "display:none;");
-  appForms.setAttribute("style", "display:flex;");
-  headerContainer.setAttribute("style", "display:none;");
-  registerFormBox.setAttribute("style", "display:none;");
-
-  //Show login form
-  loginFormBox.setAttribute("style", "display:flex");
-});
-
 const loginFunction = (username, password) => {
   fetch("/login?username=" + username + "&password=" + password).then(
     (response) => {
       response.json().then((data) => {
         if (data.error) {
           console.log(data.error);
-          loginError.setAttribute(
-            "style",
-            "display:block; color:red; margin-bottom:5px; animation:fade 1s;"
-          );
+          loginError.setAttribute("style", "display:block;");
 
           return setTimeout(() => {
             loginError.setAttribute("style", "display:none;");
           }, 3000);
         } else {
-          appForms.setAttribute("style", "display:none !important");
           mainBar.setAttribute("class", "col-12 col-md-8 mt-2");
+          bigContainer.classList.remove("hidden");
+          preEntry.classList.add("hidden");
 
           main.setAttribute("style", "display:flex;");
           headerContainer.setAttribute("style", "display:flex;");
@@ -259,6 +219,26 @@ const loginFunction = (username, password) => {
   );
 };
 
+const toggleDisplay = (targetSection) => {
+  const sections = document.getElementsByClassName("section");
+  const target = document.getElementById(targetSection);
+
+  if (!targetSection) {
+    for (let i = 0; i < sections.length; i++) {
+      sections[i].classList.remove("hidden");
+    }
+
+    return console.log("done");
+  }
+
+  for (let i = 0; i < sections.length; i++) {
+    sections[i].classList.add("hidden");
+  }
+
+  target.classList.remove("hidden");
+};
+
+//  Login Form
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   // Data from the form
@@ -267,37 +247,6 @@ loginForm.addEventListener("submit", (e) => {
 
   console.log("From Form: " + formUsername, formPassword);
   loginFunction(formUsername, formPassword);
-});
-
-// Register functions bro
-registerButton.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  //Hide dull welcome-box & Login box already on display
-  main.setAttribute("style", "display:none;");
-  appForms.setAttribute("style", "display:flex;");
-  headerContainer.setAttribute("style", "display:none;");
-  loginFormBox.setAttribute("style", "display:none;");
-
-  //Show register form
-  registerFormBox.setAttribute("style", "display:flex");
-});
-
-loginToRegister.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  //Hide dull welcome-box & Login box already on display
-  main.setAttribute("style", "display:none;");
-  appForms.setAttribute("style", "display:flex;");
-  headerContainer.setAttribute("style", "display:none;");
-  loginFormBox.setAttribute("style", "display:none;");
-
-  //Show register form
-  registerFormBox.setAttribute("style", "display:flex");
-});
-
-registerForm.addEventListener("submit", (e) => {
-  e.preventDefault();
 });
 
 // Teacher profile functions

@@ -3,138 +3,114 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Cabinet</title>
+  <title>CABINET</title>
   <meta name="description" content="A webapp for teachesrs to manage thier work">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="Cabinet">
+  {{!-- OG Property --}}
+  <meta property="og:title" content="CABINET">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="cabinet.org">
+  <meta property="og:url" content="CABINET.org">
   <meta property="og:image" content="">
 
+  {{!-- Icons --}}
   <link rel="manifest" href="/assets/site.webmanifest">
   <link rel="apple-touch-icon" href="/img/siteImages/icon.png">
-  <!-- Place favicon.ico in the root directory -->
 
+  {{!-- CSS Files --}}
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/assets/font-awesome/css/all.css">
   <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/css/main.css">
 
+  {{!-- Mobile color --}}
   <meta name="theme-color" content="#e42">
+
+  {{!-- Fonts --}}
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body onload="checkCookie()">
 
   <!-- Add your site or application content here -->
-  <div id="big-container">
-    <!-- The Header Apartment -->
-    <div id="header-container">
+  <div id="big-container" class="">
+    <div id="header-container" class="d-md-none">
       <div id="title-text">
-        <h2>CABINET</h2>
+        <img src="/img/siteImages/logo.svg" alt="logo-image">
+        <div class="logo-text">
+          <h6>CABINET.</h6>
+          <h6>APP</h6>
+        </div>
       </div>
 
       <div id="navigation">
-        <div id="navigation-desktop" class="mr-3">
-          <a href="/about">About</a>
-          <a href="/help">Help</a>
-          <a href="/developer">Developers</a>
-        </div>
-
         <div id="navigation-icons">
+          <div class="toggle-theme">
+            <h6>THEME</h6>
+            <span class="fas fa-sun mr-1" id="toggle-theme-icon">
+            </span>
+          </div>
+
           <span class="fas fa-user-circle mr-1" id="sign-in-icon">
             <div id="sign-in-content">
-              <div id="login-button"> <i class="fas fa-user-circle"></i> Login </div>
-              <div id="register-button"> <i class="fas fa-sign-in-alt"></i> Register </div>
+              <div id="register-button"> <i class="fas fa-user-circle"></i> My Profile </div>
+              <div id="login-button"> <i class="fas fa-sign-in-alt"></i> Logout </div>
             </div>
           </span>
           <span class="fas fa-bars" id="dropdown-icon">
             <div id="dropdown-content">
-              <a href="/developers">Developers</a><br>
-              <a href="/contact">Contact Us</a><br>
-              <a href="/help">Help</a><br>
-              <a href="/faq">FAQ</a>
+              <a href="/logout">Developers</a><br>
+              <a href="/contact">Contact</a><br>
+              <a href="/about">About</a><br>
             </div>
           </span>
         </div>
       </div>
-    </div>
-
-    {{!-- App Forms --}}
-    <div id="app-forms">
-      <!-- Login Form -->
-      <div id="login-form-box">
-        {{!-- <div id="form-image"></div> --}}
-        <form id="login-form">
-          <label for="username">USERNAME</label>
-          <input type="text" name="username" id="login-username" placeholder="e.g: jamal2020" required
-            autocomplete="username" />
-
-          <label for="password">PASSWORD</label>
-          <input type="password" name="password" id="login-password" placeholder="****" required autocomplete="" />
-
-          <div class="myAlert" style="display:none; ">
-            Username or Password Incorect
-          </div>
-          <button type="submit">LOGIN <i class="fas fa-paper-plane"></i></button>
-          <div id="login-alternatives">
-            <a href="">Cancel</a> <br>
-            <a href="" id="login-register-link">Don't have account? Register</a>
-          </div>
-        </form>
-      </div>
-
-      <!-- Register Form -->
-      <div id="register-form-box">
-        <form id="register-form">
-          <div class="row">
-            <div class="col-12 col-sm-6 col-md-4">
-              <label for="register-email">E-MAIL</label>
-              <input type="email" name="register-email" id="register-email" placeholder="School E-Mail" />
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
-              <label for="register-address">ADDRESS</label>
-              <input type="text" name="register-address" id="register-address" placeholder="School Address" />
-            </div>
-
-            <div class="col-12 col-sm-6 col-md-4">
-              <label for="register-username">USERNAME</label>
-              <input type="text" name="register-username" id="register-username" placeholder="Username"
-                autocomplete="username">
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
-              <label for="register-password">PASSWORD</label>
-              <input type="password" name="register-password" id="register-password" placeholder="Password"
-                autocomplete="new-password">
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
-              <label for="register-verify-password">CONFIRM </label>
-              <input type="password" name="register-verify-password" id="register-verify-password"
-                placeholder="Verify Password" autocomplete="new-password">
-            </div>
-
-            <div class="col-12 col-sm-6 col-md-4 register-col">
-              <button class="btn btn-primary" type="submit">REGISTER <i class="fas fa-server"></i></button>
-            </div>
-
-            <div class="col-12 col-sm-6 col-md-4">
-              <a href="">Cancel</a><br>
-              <a href="#" id="register-login">Already a user? Login here</a>
-            </div>
-          </div>
-        </form>
-      </div>
-
     </div>
 
     <!-- The Side bar and Main Bars House -->
     <main id="main" role="main">
       <div class="container-fluid">
         <div class="row">
-          <!-- Main Bar Contents -->
-          <div class="col-12 col-md-8 mt-3" id="main-bar">
+          <div class="col-12 col-md-8 " id="main-bar">
+            <!-- The Header Apartment -->
+            <div id="header-container" class="d-none d-md-flex">
+              <div id="title-text">
+                <img src="/img/siteImages/logo.svg" alt="logo-image">
+                <div class="logo-text">
+                  <h6>CABINET.</h6>
+                  <h6>APP</h6>
+                </div>
+              </div>
+
+              <div id="navigation">
+                <div id="navigation-icons">
+                  <div class="toggle-theme">
+                    <h6>THEME</h6>
+                    <span class="fas fa-sun mr-1" id="toggle-theme-icon">
+                    </span>
+                  </div>
+
+                  <span class="fas fa-user-circle mr-1" id="sign-in-icon">
+                    <div id="sign-in-content">
+                      <div id="register-button"> <i class="fas fa-user-circle"></i> My Profile </div>
+                      <div id="login-button"> <i class="fas fa-sign-in-alt"></i> Logout </div>
+                    </div>
+                  </span>
+                  <span class="fas fa-bars" id="dropdown-icon">
+                    <div id="dropdown-content">
+                      <a href="/logout">Developers</a><br>
+                      <a href="/contact">Contact</a><br>
+                      <a href="/about">About</a><br>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+
             <!-- Teacher Profile -->
-            <div id="profile-box" class="section container mw-100 py-4 mt-2">
+            <div id="profile-box" class="section container mw-100 py-4 mt-2 ">
               <div id="profile-image"></div>
               <div id="profile-bio">
                 <div id="profile-name">
@@ -188,7 +164,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-12">
+                  <div class="col-12 fw-300">
                     *Leave feilds you want to maintain blank
                   </div>
                 </div>
@@ -196,17 +172,17 @@
             </div>
 
             {{!-- Class Scedule --}}
-            <div id="schedule-box" class="section container mw-100">
+            <div id="schedule-box" class="section container mw-100 mt-2 hidden">
               <div class="row section-header">
                 <div class="col py-2">
-                  <h4> <i class="fas fa-table"></i> Class Schedule</h4>
+                  <h4> <i class="far fa-clock"></i> Class Schedule</h4>
                 </div>
               </div>
 
               {{!-- Monday --}}
               <div class="row s-light">
                 <div class="col-12 mb-n1">
-                  <h6>MONDAY</h6>
+                  <h6 class="fw-400">MONDAY</h6>
                 </div>
                 <div class="col monday-item">SS3 <i class="far fa-clock"></i>3:00
                 </div>
@@ -221,7 +197,7 @@
               {{!-- Tuesday --}}
               <div class="row s-light">
                 <div class="col-12 mb-n1">
-                  <h6>TUESDAY</h6>
+                  <h6 class="fw-400">TUESDAY</h6>
                 </div>
                 <div class="col tuesday-item">SS3 <i class="far fa-clock"></i>3:00
                 </div>
@@ -237,7 +213,7 @@
               {{!-- Wednessday --}}
               <div class="row s-light ">
                 <div class="col-12 mb-n1">
-                  <h6>WEDNESSDAY</h6>
+                  <h6 class="fw-400">WEDNESSDAY</h6>
                 </div>
                 <div class="col wednessday-item">SS3 <i class="far fa-clock"></i>3:00
                 </div>
@@ -253,7 +229,7 @@
               {{!-- Thursday --}}
               <div class="row s-light">
                 <div class="col-12 mb-n1">
-                  <h6>THURSDAY</h6>
+                  <h6 class="fw-400">THURSDAY</h6>
                 </div>
                 <div class="col thursday-item">SS3 <i class="far fa-clock"></i>3:00
                 </div>
@@ -269,7 +245,7 @@
               {{!-- Friday --}}
               <div class="row s-light">
                 <div class="col-12 mb-n1">
-                  <h6>FRIDAY</h6>
+                  <h6 class="fw-400">FRIDAY</h6>
                 </div>
                 <div class="col friday-item">SS3 <i class="far fa-clock"></i>3:00
                 </div>
@@ -283,7 +259,7 @@
               </div>
 
               {{!-- Buttons --}}
-              <div class="row bg-dark mb-0 s-light " id="allSchButtons">
+              <div class="row mb-0 s-light " id="allSchButtons">
                 {{!-- Manage Button --}}
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                   <button class="btn btn-sm btn-success mw-100" id="scheduleManageBtn"
@@ -431,15 +407,15 @@
             </div>
 
             {{!-- Notifications Use this template--}}
-            <div id="notifications" class="section container mw-100">
+            <div id="notifications" class="section container mw-100 mt-2 hidden">
               <div class="row section-header">
                 <div class="col py-2">
                   <h4><i class="fas fa-bell"></i> Notifications</h4>
                 </div>
               </div>
 
-              <div class="row section-content">
-                <div class="col-12 notification-item">28th August: We are launching a new portal </div>
+              <div class="row notification-content">
+                <div class="col-12 notification-item ">28th August: We are launching a new portal </div>
                 <div class="col-12 notification-item">28th June: We are launching a new portal </div>
                 <div class="col-12 notification-item">18th April: We are launching a new portal </div>
                 <div class="col-12 notification-item">22nd May: We are launching a new portal </div>
@@ -449,7 +425,7 @@
             </div>
 
             {{!-- Students profile --}}
-            <div id="student-profile" class="section container mw-100">
+            <div id="student-profile" class="section container mw-100 my-2 hidden">
               <div class="row section-header">
                 <div class="col py-2">
                   <h4> <i class="fas fa-user"></i> Student Profile</h4>
@@ -457,11 +433,11 @@
               </div>
 
               <div class="row py-2 student-table-heading">
-                <div class="col-4"><b>NAME</b></div>
-                <div class="col-2"><b>1<sup>st</sup> C.A</b></div>
-                <div class="col-2"><b>2<sup>nd</sup> C.A</b></div>
-                <div class="col-2"><b>EXAM</b></div>
-                <div class="col-2"><b>TOTAL</b></div>
+                <div class="col-4">NAME</div>
+                <div class="col-2">1<sup>st</sup> C.A</div>
+                <div class="col-2">2<sup>nd</sup> C.A</div>
+                <div class="col-2">EXAM</div>
+                <div class="col-2">TOTAL</div>
               </div>
 
               <div class="row">
@@ -471,7 +447,7 @@
               </div>
 
               {{!-- Buttons --}}
-              <div class="row bg-dark mb-0 s-light " id="allStudentButtons">
+              <div class="row mb-0 s-light " id="allStudentButtons">
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                   <button class="btn btn-sm btn-success mw-100" id="studentManageBtn"
                     onclick="showTableOptions('studentManageBtn', 'studentBtnContainer')">
@@ -582,85 +558,41 @@
 
               </div>
             </div>
-
-            <!-- Welcome Box -->
-            <div id="welcome-box" class="section container mw-100">
-              <div id="welcome-box-img"></div>
-              <div id="welcome-text">
-                <h4>
-                  Cloudinary &copy; 2018
-                </h4>
-              </div>
-            </div>
           </div>
-          <!-- Side Bar Contents -->
-          <div class="col-12 col-md-4 mt-md-3" id="side-bar">
-            <!-- Sidebar Name and Avatar -->
-            <div class="row" id="sidebar-box">
-              <div class="py-2 pl-2" id="sidebar-item">
-                <div id="avatar-image"></div>
-                <div id="user-name">
-                  <div id="name" class="m-0 teacher-name" style="font-weight: bold;">Good Day</div>
-                  <div id="title" class="teacher-feild">This is your dashboard</i></div>
-                </div>
-              </div>
-            </div>
 
-            <!-- Time Table Bar -->
-            <div class="row mb-1" id="sidebar-box-options">
-              <div class="py-2 pl-2" id="sidebar-item-option">
-                <div id="icon-box">
-                  <i id="sidebar-icon" class="fas fa-table"></i>
+          <div class="col-12 col-md-4 mt-md-2 d-none d-md-block" id="side-bar">
+            <div class="row px-3 sidebar-container">
+              <div class="col user-box">
+                <div class="sidebar-img">
                 </div>
-                <div id="user-name">
-                  <div id="option-name">
-                    <h5 class="m-0">Class Schedule</h5>
-                  </div>
-                  <div id="option-description">Weekly time table</div>
-                </div>
-              </div>
-            </div>
-            <!-- Student Records -->
-            <div class="row mb-1" id="sidebar-box-options">
-              <div class="py-2 pl-2" id="sidebar-item-option">
-                <div id="icon-box">
-                  <i id="sidebar-icon" class="fas fa-user"></i>
-                </div>
-                <div id="user-name">
-                  <div id="option-name">
-                    <h5 class="m-0">Student Profiles</h5>
-                  </div>
-                  <div id="option-description">View/add student records</div>
-                </div>
-              </div>
-            </div>
 
-            <!-- Notifications -->
-            <div class="row mb-1" id="sidebar-box-options">
-              <div class="py-2 pl-2" id="sidebar-item-option">
-                <div id="icon-box">
-                  <i id="sidebar-icon" class="fas fa-bell"></i>
-                </div>
-                <div id="user-name">
-                  <div id="option-name">
-                    <h5 class="m-0">Notifications</h5>
-                  </div>
-                  <div id="option-description">See new announcements</div>
+                <div class="sidebar-name">
+                  <h4 class="m-0 teacher-name">Ibrahim Badamasi</h4>
+                  <h6 class="m-0 teacher-feild">Geological Physics</h6>
                 </div>
               </div>
-            </div>
 
-            <!-- Sylabbles -->
-            <div class="row mb-1" id="sidebar-box-options">
-              <div class="py-2 pl-2" id="sidebar-item-option">
-                <div id="icon-box">
-                  <i id="sidebar-icon" class="fas fa-book"></i>
-                </div>
-                <div id="user-name">
-                  <div id="option-name">
-                    <h5 class="m-0">Sylabbles</h5>
+              <div class="sidebar-item">
+                <div class="sidebar-item-heading">Action Pane</div>
+                <div class="sidebar-item-content">
+                  <div class="profile-btn" onclick="toggleDisplay('profile-box')"><i class="fas fa-user"></i> PROFILE
                   </div>
-                  <div id="option-description">See your Sylabbles</div>
+                  <div class="student-btn" onclick="toggleDisplay('student-profile')"><i
+                      class="fas fa-users"></i>STUDENTS</div>
+                  <div class="class-schedule-btn" onclick="toggleDisplay('schedule-box')"><i
+                      class="fas fa-clipboard"></i>
+                    CLASS SCHEDULE</div>
+                  <div class="class-schedule-btn" onclick="toggleDisplay('notifications')"><i class="fas fa-bell"></i>
+                    NOTIFICATIONS</div>
+                  <div onclick="toggleDisplay('')"><i class="fas fa-eye"></i>ALL TABLES </div>
+                  <div class="logout-btn"><i class="fas fa-sign-in-alt"></i> LOGOUT</div>
+                </div>
+              </div>
+
+
+              <div class="sidebar-item">
+                <div class="sidebar-item-content">
+                  &copy; 2020 Cabinet.
                 </div>
               </div>
             </div>
@@ -669,10 +601,73 @@
       </div>
     </main>
 
+    <div class="container-fluid d-md-none">
+      <div class="row bottom-navigation mw-100">
+        <div class="col-3" onclick="toggleDisplay('profile-box')"><i class="fas fa-user"></i></div>
+        <div class="col-3" onclick="toggleDisplay('schedule-box')"><i class="fas fa-clipboard-list"></i></div>
+        <div class="col-3" onclick="toggleDisplay('student-profile')"><i class="fas fa-users"></i></div>
+        <div class="col-3" onclick="toggleDisplay('notifications')"><i class="fas fa-bell"> </i> </div>
+      </div>
+    </div>
 
     <div id="userAlert" class="hidden">
       <i class="far fa-check-circle"></i>
       <div>Save Succesfull</div>
+    </div>
+  </div>
+
+  <div id="pre-entry" class="hidden container-fluid">
+    <div class="row">
+      <div class="col-9 graphic-container">
+        <div class="graphic-image ">
+          <img src="/img/siteImages/hat2.svg" class="img-fluid">
+        </div>
+        <div class="graphic-text">
+          <h3>TRY NOW FOR FREE</h3>
+          <h6>Get rid of papers, we store things for you!</h6>
+
+          <button>REGISTER</button>
+          <button>PRICING </button>
+        </div>
+      </div>
+
+      <div class="col-3 login-form-container">
+
+        <form id="login-form" class="login-side-object">
+          <label for="username">USERNAME</label>
+          <input type="text" class="login-username mw-100" required />
+
+          <label for="password">PASSWORD</label>
+          <input type="password" class="login-password mw-100" required />
+
+          <div class="myAlert" style="display:none; ">
+            <b>
+              Username | Password Incorect
+            </b>
+          </div>
+
+          <button type="submit" class="mw-100 log-button">LOGIN <i class="fas fa-paper-plane"></i></button>
+
+        </form>
+
+        <div class="login-side-object">
+          <div class="side-object-heading">
+            <h6>Quick Links</h6>
+          </div>
+
+          <div class="side-object-content">
+            <a href="/developers">Developer Team</a> <br>
+            <a href="/contacts">Contacts</a> <br>
+            <a href="/rescources">Rescources <i class="fas fa-link"></i></a> <br>
+            <a href="/misc">Twitter</a> <i class="fas fa-link"></i><br>
+            <a href="" target="blank">GitHub Repo <i class="fas fa-link"></i></a>
+          </div>
+        </div>
+
+        <div class="login-side-object">
+          CABINET &copy; 2018
+        </div>
+      </div>
     </div>
   </div>
 

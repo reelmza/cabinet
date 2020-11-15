@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "local":"nodemon src/app.js -e js,hbs"
+    "local": "nodemon src/app.js -e js,hbs",
+    "start": "node src/app.js"
   },
   "author": "",
   "license": "ISC",
