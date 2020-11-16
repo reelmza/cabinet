@@ -282,11 +282,28 @@ textarea {
 
   border: solid 2px #d6d6d6;
   /* box-shadow: #303030 0px 0px 3px; */
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 .mw-100 {
   min-width:100%
+}
+
+.mbutton {
+  background: #106944;
+  color:#fff;
+  font-weight: bold;
+}
+
+/* Sylabble content */
+.section-content div:nth-child(odd) {
+  background: #e4e4e4;
+  padding: 10px 10px;
+}
+
+.section-content div:nth-child(even) {
+  background: #ffffff;
+  padding: 10px 10px;
 }
 
 /* Header */
@@ -341,6 +358,45 @@ textarea {
 
 #dropdown-icon {
   display: none;
+}
+
+#sign-in-icon, #dropdown-icon {
+  position: relative;
+}
+
+#sign-in-icon:hover #sign-in-content, #dropdown-icon:hover #dropdown-content {
+  display: block;
+  overflow: auto;
+}
+
+#sign-in-content:hover {
+  display: block;
+}
+
+#sign-in-content, #dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+
+  right: 0%;
+  top: 70%;
+  padding: 20px;
+  min-height: 200%;
+  min-width: 130px;
+  background: #fff;
+  color: #333;
+  padding: 10px;
+  font-size: 70%;
+  line-height: 1.5;
+
+  box-shadow: #333 0px 0px 3px;
+  animation: fade 0.4s;
+
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#dropdown-content a {
+  color: #076447;
 }
 
 /* App Forms */
@@ -648,32 +704,20 @@ main {
 }
 
 /* Class Scedule */
-#schedule-box {
+/* #schedule-box {
   display: none;
-}
-#schedule-header {
-  background: #36175A;
-}
+} */
+
 
 .s-dark {
-  background: #dadada;
+  background: #e4e4e4;
 }
 
 /* Student Profile */
 #student-profile {
-  display: none;
+  display: block;
 }
 
-/* Sylabble content */
-.sylable-content div:nth-child(odd), .notification-content div:nth-child(odd) {
-  background: #fff;
-  padding: 10px 10px;
-}
-
-.sylable-content div:nth-child(even), .notification-content div:nth-child(even) {
-  background: #d8d8d8;
-  padding: 10px 10px;
-}
 /* Responsive */
 @media only screen and  (max-width: 600px) {
   /* Heade container */
@@ -755,43 +799,4 @@ main {
 @keyframes fade {
   0% {opacity: 0;}
   100%{opacity:1}
-}
-
-#sign-in-icon, #dropdown-icon {
-  position: relative;
-}
-
-#sign-in-icon:hover #sign-in-content, #dropdown-icon:hover #dropdown-content {
-  display: block;
-  overflow: auto;
-}
-
-#sign-in-content:hover {
-  display: block;
-}
-
-#sign-in-content, #dropdown-content {
-  display: none;
-  position: absolute;
-  z-index: 1;
-
-  right: 0%;
-  top: 70%;
-  padding: 20px;
-  min-height: 200%;
-  min-width: 130px;
-  background: #fff;
-  color: #333;
-  padding: 10px;
-  font-size: 70%;
-  line-height: 1.5;
-
-  box-shadow: #333 0px 0px 3px;
-  animation: fade 0.4s;
-
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-#dropdown-content a {
-  color: #076447;
 }

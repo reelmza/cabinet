@@ -38,6 +38,7 @@ const mainDropdown = document.querySelector('#main-dropdown')
 const dropDownIcon = document.querySelector('#dropdown-icon')
 const closeMainDropdown = document.querySelector('#close-main-dropdown')
 
+
 // Login functions
     // Display login form & Hide welcome box
     loginButton.addEventListener('click', (e) => {
