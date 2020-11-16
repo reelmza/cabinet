@@ -617,7 +617,7 @@ select:focus {
 .bottom-navigation {
   background: #fff;
   color: #333;
-  padding: 10px;
+  padding: 7px 2vmax;
 
   text-align: center;
   position: fixed;
@@ -917,7 +917,7 @@ main {
   }
 
   #header-container {
-    padding: 22px 2vmax;
+    padding: 25px 2vmax;
   }
 
   #title-text .logo-text {
