@@ -13,6 +13,7 @@
 html {
   font-size: 1em;
   line-height: 1.4;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -517,6 +518,14 @@ select:focus {
   height: 10vh;
 }
 
+.mobile-header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+
+  top: 0;
+}
+
 #title-text {
   display: flex;
   align-items: center;
@@ -624,7 +633,7 @@ select:focus {
 
 .bottom-navigation {
   background: #fff;
-  color: #83a9aa;
+  color: #333;
   padding: 10px;
 
   text-align: center;
@@ -920,6 +929,7 @@ main {
 @media only screen and (max-width: 768px) {
   main {
     margin-bottom: 45px;
+    margin-top: 60px;
   }
 
   .toggle-theme h6 {
