@@ -524,6 +524,7 @@ select:focus {
   width: 100%;
 
   top: 0;
+  box-shadow: #1d52b4 0px 2px 3px;
 }
 
 #title-text {
@@ -903,6 +904,7 @@ main {
 
   #profile-form input {
     margin-bottom: 3vmin;
+    padding: 10px 5px;
   }
 
   #app-forms {
