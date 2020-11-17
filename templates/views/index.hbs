@@ -53,7 +53,9 @@
         <div id="navigation-icons" class="">
           <span class="fas fa-user-circle mr-1" id="sign-in-icon">
             <div id="sign-in-content">
-              <div id="register-button"> <i class="fas fa-user-circle"></i> My Profile </div>
+              <div id="profile-button" onclick="toggleDisplay('profile-box')"> <i class="fas fa-user-circle"></i> My
+                Profile
+              </div>
               <div id="login-button"> <i class="fas fa-sign-in-alt"></i> Logout </div>
             </div>
           </span>
@@ -87,7 +89,8 @@
                 <div id="navigation-icons">
                   <span class="fas fa-user-circle mr-1" id="sign-in-icon">
                     <div id="sign-in-content">
-                      <div id="register-button"> <i class="fas fa-user-circle"></i> My Profile </div>
+                      <div id="register-button" onclick="toggleDisplay('profile-box')"> <i class=" fas fa-user-circle">
+                        </i> My Profile </div>
                       <div id="login-button"> <i class="fas fa-sign-in-alt"></i> Logout </div>
                     </div>
                   </span>
@@ -575,10 +578,10 @@
                   <div class="class-schedule-btn" onclick="toggleDisplay('schedule-box')"><i
                       class="fas fa-clipboard"></i>
                     CLASS SCHEDULE</div>
-                  <div class="class-schedule-btn" onclick="toggleDisplay('notifications')"><i class="fas fa-bell"></i>
+                  <div class="notification-btn" onclick="toggleDisplay('notifications')"><i class="fas fa-bell"></i>
                     NOTIFICATIONS</div>
                   <div onclick="toggleDisplay('')"><i class="fas fa-eye"></i>ALL TABLES </div>
-                  <div class="logout-btn"><i class="fas fa-sign-in-alt"></i> LOGOUT</div>
+                  <div class="logout-btn" onclick="logout()"><i class="fas fa-sign-in-alt"></i> LOGOUT</div>
                 </div>
               </div>
 

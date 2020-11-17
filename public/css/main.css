@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  background-color: #edf2f4;
+  background-color: #ffffff;
   color: #333;
   font-family: "Oswald", "Trebuchet MS", arial !important;
 }
@@ -337,6 +337,8 @@ select:focus {
   margin: 0px;
   background: #ffffff;
   overflow: hidden;
+
+  border-radius: 5px;
 }
 
 .s-light {
@@ -516,6 +518,8 @@ select:focus {
 
   padding: 30px 2vmax;
   height: 10vh;
+
+  border-radius: 5px;
 }
 
 .mobile-header {
@@ -916,12 +920,15 @@ main {
 /* Bootstrap queries */
 @media only screen and (max-width: 768px) {
   main {
-    margin-bottom: 45px;
-    margin-top: 40px;
+    margin-bottom: 35px;
+    margin-top: 49px;
+
+    background: #fff;
   }
 
   #header-container {
     padding: 25px 2vmax;
+    border-radius: 0px;
   }
 
   #title-text .logo-text {

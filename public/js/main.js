@@ -45,7 +45,6 @@ const checkCookie = () => {
     preEntry.classList.remove("hidden");
   }
 };
-
 const loadBasicData = (data) => {
   // Set cookie to avoid reload refresh
   document.cookie =
@@ -518,3 +517,10 @@ tableDeleteForm.addEventListener("submit", (e) => {
     });
   });
 });
+
+const logout = () => {
+  document.cookie = "username=; expires=Mon, 01 Jan 1999 00:00:00 UTC; path=/;";
+  document.cookie = "password=; expires=Mon, 01 Jan 1999 00:00:00 UTC; path=/;";
+
+  return window.location.replace("/");
+};
