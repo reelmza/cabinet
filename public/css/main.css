@@ -536,10 +536,10 @@ select:focus {
   justify-content: center;
 }
 #title-text .logo-text {
-  margin-top: 1px;
+  margin-top: -1px;
 }
 #title-text .logo-text h6 {
-  font-size: 14px;
+  font-size: 15px;
   color: #fff;
   margin: 0px;
 
@@ -547,8 +547,8 @@ select:focus {
 }
 
 #title-text img {
-  height: 48px;
-  margin: 0px;
+  height: 40px;
+  margin-right: 5px;
 }
 
 /* Navigation */
@@ -934,18 +934,18 @@ main {
   }
 
   #title-text .logo-text {
-    margin-top: 1px;
+    margin-top: -1px;
   }
   #title-text .logo-text h6 {
     font-size: 13px;
     color: #fff;
     margin: 0px;
 
-    font-weight: 400;
+    font-weight: 200;
   }
 
-  .mobile-header img {
-    height: 25px;
+  #title-text img {
+    height: 30px;
   }
 }
 
