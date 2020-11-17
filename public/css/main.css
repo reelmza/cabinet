@@ -19,7 +19,7 @@ html {
 body {
   background-color: #edf2f4;
   color: #333;
-  font-family: "Oswald";
+  font-family: "Oswald", "Trebuchet MS", arial !important;
 }
 /*
  * Remove text-shadow in selection highlight:
@@ -508,8 +508,8 @@ select:focus {
 }
 /* Header */
 #header-container {
-  background: #fff;
-  color: #333;
+  background: #333;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -524,7 +524,6 @@ select:focus {
   width: 100%;
 
   top: 0;
-  box-shadow: #1d52b4 0px 2px 3px;
 }
 
 #title-text {
@@ -536,8 +535,8 @@ select:focus {
   margin-top: 1px;
 }
 #title-text .logo-text h6 {
-  font-size: 10px;
-  color: #444;
+  font-size: 14px;
+  color: #fff;
   margin: 0px;
 
   font-family: "Oswald", "Trebuchet MS", "Lucida Sans Unicode", arial;
@@ -648,7 +647,10 @@ select:focus {
   padding: 15px 20px;
   height: 100px;
 
-  background: #fff;
+  background: #333;
+  color: #fff;
+
+  border-radius: 5px;
 }
 
 .sidebar-name h4 {
@@ -671,20 +673,22 @@ select:focus {
 
 .sidebar-item {
   background: #fff;
+  color: #333;
 
   margin-top: 10px;
   padding: 20px 20px;
+  border-radius: 5px;
 }
 
 .sidebar-item-heading {
-  border-bottom: solid 1px rgb(170, 170, 170);
+  border-bottom: solid 2px #333;
   padding-bottom: 5px;
 
   font-weight: 500;
 }
 .sidebar-item-content {
   padding-top: 10px;
-  font-weight: 300;
+  font-weight: 400;
 }
 .sidebar-item-content div {
   margin-bottom: 10px;
@@ -701,7 +705,7 @@ main {
   border-right: solid 1px #cacaca;
   padding-bottom: 20px;
 
-  background-color: #416bc5;
+  background-color: #e4e4e4;
 }
 
 /* Teacher Profile Box */
@@ -925,7 +929,7 @@ main {
   }
   #title-text .logo-text h6 {
     font-size: 10px;
-    color: #444;
+    color: #fff;
     margin: 0px;
 
     font-family: "Oswald", "Trebuchet MS", "Lucida Sans Unicode", arial;
