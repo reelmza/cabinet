@@ -6,7 +6,6 @@ const loginError = document.querySelector(".myAlert");
 var loginUsername = document.getElementsByClassName("login-username")[0];
 var loginPassword = document.getElementsByClassName("login-password")[0];
 
-console.log(loginUsername, loginPassword);
 // Register Form elements
 const registerButton = document.querySelector("#register-button");
 const registerFormBox = document.querySelector("#register-form-box");
@@ -45,6 +44,7 @@ const checkCookie = () => {
     preEntry.classList.remove("hidden");
   }
 };
+
 const loadBasicData = (data) => {
   // Set cookie to avoid reload refresh
   document.cookie =
