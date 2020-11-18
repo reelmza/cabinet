@@ -270,9 +270,10 @@ textarea {
 
 .section-header {
   padding-top: 5px;
-  border-bottom: solid 2px #d6d6d6;
   color: #106944;
-  background: #fff;
+  background: #ffffff;
+
+  /* border-bottom: solid 1px #d6d6d6; */
 }
 
 .section {
@@ -280,9 +281,9 @@ textarea {
   background: #ffffff;
   overflow: hidden;
 
-  border: solid 2px #d6d6d6;
-  /* box-shadow: #303030 0px 0px 3px; */
-  /* border-radius: 5px; */
+  /* border: solid 1px #d6d6d6; */
+  border-radius: 3px;
+  box-shadow: #303030 0px 0px 3px;
 }
 
 .mw-100 {
