@@ -282,22 +282,19 @@ textarea {
 .btn-success,
 .btn-danger,
 .btn-warning {
-  background: #222;
+  background: #000 !important;
   box-shadow: none !important;
   border: none !important;
   border-radius: 0px;
 }
 
 .btn[disabled] {
-  background: #222;
+  background: #000;
 }
 
 #studentManageBtn,
 #scheduleManageBtn {
-  background: #fff;
-  color: #6063e3;
-
-  border: solid 2px #6063e3 !important;
+  color: #fff;
 }
 
 input:focus,
@@ -513,7 +510,7 @@ select:focus {
 }
 /* Header */
 #header-container {
-  background: #333;
+  background: #000;
   color: #fff;
   display: flex;
   align-items: center;
@@ -588,6 +585,10 @@ select:focus {
   overflow: auto;
 }
 
+#sign-in-content a {
+  color: #333;
+}
+
 #sign-in-content:hover {
   display: block;
 }
@@ -654,7 +655,7 @@ select:focus {
   padding: 15px 20px;
   height: 100px;
 
-  background: #333;
+  background: #000;
   color: #fff;
 
   border-radius: 5px;
@@ -784,6 +785,10 @@ main {
 
 #student-profile .py-2 {
   font-size: 0.9em;
+}
+
+#student-profile-content div {
+  font-weight: 300;
 }
 
 #studentForm .row .col {
@@ -980,7 +985,7 @@ main {
 
   .form-text h3 {
     text-align: center;
-    margin: 10px 0px;
+    margin: 0px 0px;
 
     color: #fff;
     font-weight: 400;
@@ -1000,7 +1005,7 @@ main {
     padding: 40px 20px;
 
     /* box-shadow: #343696 0px 0px 5px; */
-    background: #fff;
+    background: #6063e3;
   }
 
   #login-form input,
@@ -1011,16 +1016,22 @@ main {
 
   #login-form label {
     font-weight: 400;
+    color: #fff;
   }
 
   #login-form button {
     font-weight: 300;
+    background-color: rgb(0, 0, 0);
+  }
+
+  .myAlert {
+    color: #fff;
   }
 
   .login-footer {
     text-align: center;
     margin-top: 30px;
-    color: #6063e3;
+    color: #fff;
   }
 }
 
