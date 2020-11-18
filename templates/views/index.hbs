@@ -18,7 +18,7 @@
 
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/assets/font-awesome/css/all.css">
-  <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/css/main.css">
 
   <meta name="theme-color" content="#e42">
@@ -27,12 +27,12 @@
 <body>
 
   <!-- Add your site or application content here -->
-  <div id="big-container">   
+  <div id="big-container">
     <!-- The Header Apartment -->
     <div id="header-container">
       <div id="title-text">
         <h2>CABINET</h2>
-      </div>  
+      </div>
 
       <div id="navigation">
         <div id="navigation-desktop" class="mr-3">
@@ -57,20 +57,21 @@
             </div>
           </span>
         </div>
-      </div>  
+      </div>
     </div>
 
     {{!-- App Forms --}}
     <div id="app-forms">
-    <!-- Login Form -->
-      <div id="login-form-box"> 
+      <!-- Login Form -->
+      <div id="login-form-box">
         {{!-- <div id="form-image"></div> --}}
         <form id="login-form">
           <label for="username">USERNAME</label>
-          <input type="text" name="username" id="login-username" placeholder="e.g: jamal2020" required autocomplete="username"/>
+          <input type="text" name="username" id="login-username" placeholder="e.g: jamal2020" required
+            autocomplete="username" />
 
           <label for="password">PASSWORD</label>
-          <input type="password" name="password" id="login-password" placeholder="****" required autocomplete=""/>
+          <input type="password" name="password" id="login-password" placeholder="****" required autocomplete="" />
 
           <div class="myAlert" style="display:none; ">
             Username or Password Incorect
@@ -79,222 +80,231 @@
           <div id="login-alternatives">
             <a href="">Cancel</a> <br>
             <a href="" id="login-register-link">Don't have account? Register</a>
-          </div> 
-          </form>
+          </div>
+        </form>
       </div>
 
-    <!-- Register Form -->
+      <!-- Register Form -->
       <div id="register-form-box">
-            <form id="register-form">
-              <div class="row">
-                <div class="col-12 col-sm-4">
-                  <label for="register-name">SCHOOL NAME</label>
-                  <input type="text" name="register-name" id="register-name" placeholder="EG: Saint James"/>
-                </div>
-                <div class="col-12 col-sm-4">
-                  <label for="register-type">SCHOOL TYPE</label>
-                  <select name="register-type" id="register-type" required>
-                    <option value=""></option>
-                    <option value="High School"> High School</option>
-                    <option value="Primary School"> Primary School</option>
-                    <option value="Vocational School"> Vocational School</option>
-                  </select>
-                </div>
-                <div class="col-12 col-sm-4">
-                  <label for="register-student-number">SCHOOL POPULATION</label>
-                  <input type="number" name="register-student-number" id="register-student-number" placeholder="Numbers only" max="800" />
-                </div>
+        <form id="register-form">
+          <div class="row">
+            <div class="col-12 col-sm-4">
+              <label for="register-name">SCHOOL NAME</label>
+              <input type="text" name="register-name" id="register-name" placeholder="EG: Saint James" />
+            </div>
+            <div class="col-12 col-sm-4">
+              <label for="register-type">SCHOOL TYPE</label>
+              <select name="register-type" id="register-type" required>
+                <option value=""></option>
+                <option value="High School"> High School</option>
+                <option value="Primary School"> Primary School</option>
+                <option value="Vocational School"> Vocational School</option>
+              </select>
+            </div>
+            <div class="col-12 col-sm-4">
+              <label for="register-student-number">SCHOOL POPULATION</label>
+              <input type="number" name="register-student-number" id="register-student-number"
+                placeholder="Numbers only" max="800" />
+            </div>
 
-                <div class="w-100"></div>
+            <div class="w-100"></div>
 
-                <div class="col-12 col-sm-4">
-                  <label for="register-staff-population">STAFF POPULATION</label>
-                  <input type="number" name="register-staff-number" id="register-staff-number" placeholder="1000 or less"/>
-                </div>
-                <div class="col-12 col-sm-4">
-                  <label for="register-email">E-MAIL</label>
-                  <input type="email" name="register-email" id="register-email" placeholder="School E-Mail" />
-                </div>
-                <div class="col-12 col-sm-4">
-                  <label for="register-address">ADDRESS</label>
-                  <input type="text" name="register-address" id="register-address" placeholder="School Address"/>
-                </div>
+            <div class="col-12 col-sm-4">
+              <label for="register-staff-population">STAFF POPULATION</label>
+              <input type="number" name="register-staff-number" id="register-staff-number" placeholder="1000 or less" />
+            </div>
+            <div class="col-12 col-sm-4">
+              <label for="register-email">E-MAIL</label>
+              <input type="email" name="register-email" id="register-email" placeholder="School E-Mail" />
+            </div>
+            <div class="col-12 col-sm-4">
+              <label for="register-address">ADDRESS</label>
+              <input type="text" name="register-address" id="register-address" placeholder="School Address" />
+            </div>
 
-                <div class="w-100"></div>
+            <div class="w-100"></div>
 
-                <div class="col-12 col-sm-4 ">
-                  <label for="register-username">USERNAME</label>
-                  <input type="text" name="register-username" id="register-username" placeholder="Username" autocomplete="username">
-                </div>
-                <div class="col-12 col-sm-4 ">
-                  <label for="register-password">PASSWORD</label>
-                  <input type="password" name="register-password" id="register-password" placeholder="Password" autocomplete="new-password">
-                </div>
-                <div class="col-12 col-sm-4 ">
-                  <label for="register-verify-password">CONFIRM </label>
-                  <input type="password" name="register-verify-password" id="register-verify-password" placeholder="Verify Password" autocomplete="new-password">
-                </div>
+            <div class="col-12 col-sm-4 ">
+              <label for="register-username">USERNAME</label>
+              <input type="text" name="register-username" id="register-username" placeholder="Username"
+                autocomplete="username">
+            </div>
+            <div class="col-12 col-sm-4 ">
+              <label for="register-password">PASSWORD</label>
+              <input type="password" name="register-password" id="register-password" placeholder="Password"
+                autocomplete="new-password">
+            </div>
+            <div class="col-12 col-sm-4 ">
+              <label for="register-verify-password">CONFIRM </label>
+              <input type="password" name="register-verify-password" id="register-verify-password"
+                placeholder="Verify Password" autocomplete="new-password">
+            </div>
 
-                <div class="w-100"></div>
+            <div class="w-100"></div>
 
-                <div class="col-12 col-sm-4">
-                  <button type="submit">REGISTER <i class="fas fa-server"></i></button>
-                  <br><br>
-                  <a href="">Cancel</a><br>
-                  <a href="#" id="register-login">Already a user? Login here</a>
-                </div>
-              </div>
-            </form>
+            <div class="col-12 col-sm-4">
+              <button type="submit">REGISTER <i class="fas fa-server"></i></button>
+              <br><br>
+              <a href="">Cancel</a><br>
+              <a href="#" id="register-login">Already a user? Login here</a>
+            </div>
+          </div>
+        </form>
       </div>
-    
+
     </div>
 
     <!-- The Side bar and Main Bars House -->
-    <main id="main" role="main" >
+    <main id="main" role="main">
       <div class="container-fluid">
         <div class="row">
           <!-- Main Bar Contents -->
           <div class="col-12 col-md-8 mt-3" id="main-bar">
-            <!-- Welcome Box -->
-            <div id="welcome-box">
-              <div id="welcome-box-img"></div>
-              <div id="welcome-text">
-                <h4>
-                    <i class="fas fa-user-circle"></i> Login <br>
-                    <i class="fas fa-search"></i> Request Service
-                 </h4>
-              </div>
-            </div>
-
             <!-- Teacher Profile -->
-            <div id="profile-box" class="mb-2">
+            <div id="profile-box" class="section container mw-100 py-4">
               <div id="profile-image"></div>
               <div id="profile-bio">
-                <div id="profile-name"><h3>Mr. Jon Pan</h3> <h5 class="mt-n2">Maths & Economics </h5></div>
+                <div id="profile-name">
+                  <h3 class="teacher-name">Mr. Jon Pan</h3>
+                  <h5 class="mt-n2 teacher-feild">Maths & Economics </h5>
+                </div>
               </div>
 
               <form id="profile-form" class="">
                 <div class="row ">
                   <div class="col-12 col-sm-4">
-                    <input type="text" name="form-title" id="form-title" placeholder="Mr." disabled/>
+                    <input type="text" class="teacher-f-feild disabled" placeholder="Maths & Economics" disabled />
                   </div>
                   <div class="col-12 col-sm-4">
-                    <input type="text" name="form-name" id="form-name" placeholder="Jon Pan" disabled/>
+                    <input type="text" class="teacher-f-name disabled" placeholder="Jon Pan" disabled />
                   </div>
                   <div class="col-12 col-sm-4">
-                    <input type="date" name="profile-age" id="profile-age" disabled/>
+                    <input type="number" class="teacher-f-age disabled" placeholder="17" disabled />
                   </div>
 
                   <div class="w-100"></div>
 
                   <div class="col-12 col-sm-4">
-                    <input type="text" name="profile-phone" id="profile-phone" placeholder="09027365256" disabled/>
+                    <input type="number" class="teacher-f-phone disabled" placeholder="09027365256" disabled />
                   </div>
                   <div class="col-12 col-sm-4">
-                    <input type="email" name="profile-email" id="profile-email" placeholder="jessemoses87@gmail.com" disabled/>
+                    <input type="email" class="teacher-f-mail disabled" placeholder="jessemoses87@gmail.com" disabled />
                   </div>
                   <div class="col-12 col-sm-4">
-                    <input type="text" name="profile-address" id="profile-address" placeholder="Barama, Mubi North" disabled/>
+                    <input type="text" class="teacher-f-address disabled" placeholder="Barama, Mubi North" disabled />
                   </div>
 
                   <div class="w-100"></div>
 
                   <div class="col-12 col-sm-4 mb-2">
+                    <input type="text" class="teacher-f-username" placeholder="rellbetis" disabled></input>
+                  </div>
+                  <div class="col-12 col-sm-4 mb-2">
                     <button id="profile-edit">EDIT <i class="fas fa-pen"></i></button>
                   </div>
                   <div class="col-12 col-sm-4">
-                    <button disabled>SAVE <i class="fas fa-server"></i></button>
+                    <button id="profile-save" type="submit" disabled>SAVE <i class="fas fa-server"></i></button>
                   </div>
                 </div>
               </form>
             </div>
 
             {{!-- Class Scedule --}}
-            <div id="schedule-box" class="section container mw-100 mb-3">
+            <div id="schedule-box" class="section container mw-100">
               <div class="row section-header">
                 <div class="col py-2">
                   <h4> <i class="fas fa-table"></i> Class Schedule</h4>
                 </div>
               </div>
 
-                <div class="row py-2 s-light">
-                <div class="col-12 mb-n1"><h5>Monday</h5></div>
-                <div class="col"><b>SS3</b> 
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span> 
+              <div class="row py-2 s-light">
+                <div class="col-12 mb-n1">
+                  <h5>Monday</h5>
+                </div>
+                <div class="col"><b>SS3</b>
+                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
                 </div>
 
-                <div class="col"><b>JSS3</b> 
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span> 
+                <div class="col"><b>JSS3</b>
+                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
                 </div>
 
-                <div class="col"><b>SS3</b> 
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span> 
+                <div class="col"><b>SS3</b>
+                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
                 </div>
               </div>
 
               <div class="row py-2 s-dark">
-                <div class="col-12 mb-n1"><h5>Tuesday</h5></div>
-                <div class="col"><b>SS3</b> 
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span> 
+                <div class="col-12 mb-n1">
+                  <h5>Tuesday</h5>
+                </div>
+                <div class="col"><b>SS3</b>
+                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
                 </div>
 
-                <div class="col"><b>JSS3</b> 
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span> 
+                <div class="col"><b>JSS3</b>
+                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
                 </div>
 
-                <div class="col"><b>SS3</b> 
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span> 
+                <div class="col"><b>SS3</b>
+                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
                 </div>
               </div>
 
               <div class="row py-2 s-light">
-                <div class="col-12 mb-n1"><h5>Wednessday</h5></div>
-                <div class="col"><b>SS3</b> 
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span> 
+                <div class="col-12 mb-n1">
+                  <h5>Wednessday</h5>
+                </div>
+                <div class="col"><b>SS3</b>
+                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
                 </div>
 
-                <div class="col"><b>JSS3</b> 
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span> 
+                <div class="col"><b>JSS3</b>
+                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
                 </div>
 
-                <div class="col"><b>SS3</b> 
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span> 
+                <div class="col"><b>SS3</b>
+                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
                 </div>
               </div>
 
               <div class="row py-2 s-dark">
-                <div class="col-12 mb-n1"><h5>Thursday</h5></div>
-                <div class="col"><b>SS3</b> 
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span> 
+                <div class="col-12 mb-n1">
+                  <h5>Thursday</h5>
+                </div>
+                <div class="col"><b>SS3</b>
+                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
                 </div>
 
-                <div class="col"><b>JSS3</b> 
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span> 
+                <div class="col"><b>JSS3</b>
+                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
                 </div>
 
-                <div class="col"><b>SS3</b> 
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span> 
+                <div class="col"><b>SS3</b>
+                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
                 </div>
               </div>
 
               <div class="row py-2 s-light">
-                <div class="col-12 mb-n1"><h5>Friday</h5></div>
-                <div class="col"><b>SS3</b> 
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span> 
+                <div class="col-12 mb-n1">
+                  <h5>Friday</h5>
+                </div>
+                <div class="col"><b>SS3</b>
+                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
                 </div>
 
-                <div class="col"><b>JSS3</b> 
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span> 
+                <div class="col"><b>JSS3</b>
+                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
                 </div>
 
-                <div class="col"><b>SS3</b> 
-                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span> 
+                <div class="col"><b>SS3</b>
+                  <span class="badge badge-dark"><i class="fas fa-clock"></i><b>2:00</b></span>
                 </div>
               </div>
             </div>
 
             {{!-- Notifications Use this template--}}
-            <div id="notifications" class="section container mw-100 mb-3">
+            <div id="notifications" class="section container mw-100">
               <div class="row section-header">
                 <div class="col py-2">
                   <h4><i class="fas fa-bell"></i> Notifications</h4>
@@ -308,20 +318,22 @@
                 <div class="col-12">22nd May: We are launching a new portal </div>
                 <div class="col-12">2nd September: We are launching a new portal </div>
               </div>
-              
+
             </div>
 
             {{!-- Student Sylabbles --}}
-            <div id="student-syllables" class="section container mw-100 mb-2">
+            <div id="student-syllables" class="section container mw-100">
               {{!-- Header --}}
               <div class="row section-header">
-                <div class="col py-2"><h4><i class="fas fa-book"></i> Student Sylables</h4></div>
+                <div class="col py-2">
+                  <h4><i class="fas fa-book"></i> Student Sylables</h4>
+                </div>
               </div>
 
               {{!-- Class taken --}}
               <div class="row">
                 <div class="col py-2 s-dark"><b>SS1</b> - <b>SS3</b> - <b>SS2</b></div>
-                
+
               </div>
 
               {{!-- Sylabble Content --}}
@@ -350,7 +362,7 @@
                   Week 6: Respiratory system and diseases
                 </div>
               </div>
-              
+
               {{!-- Sylabble form --}}
               <div class="row my-2">
 
@@ -358,16 +370,18 @@
                   <button class="btn btn-sm mbutton" style="width: 100%;">Add Class</button>
                 </div>
                 <div class="col-6 col-md-4 col-lg-3">
-                  <button class="btn btn-sm mbutton"  style="width: 100%;">Delete Class</button>
+                  <button class="btn btn-sm mbutton" style="width: 100%;">Delete Class</button>
                 </div>
 
               </div>
             </div>
 
             {{!-- Students profile --}}
-            <div id="student-profile" class="section container mw-100 mb-3">
+            <div id="student-profile" class="section container mw-100">
               <div class="row section-header">
-                <div class="col py-2"><h4> <i class="fas fa-user"></i> Student Profile</h4></div>
+                <div class="col py-2">
+                  <h4> <i class="fas fa-user"></i> Student Profile</h4>
+                </div>
               </div>
 
               <div class="row py-2">
@@ -419,45 +433,59 @@
                 <div class="col-2">85</div>
               </div>
             </div>
+
+            <!-- Welcome Box -->
+            <div id="welcome-box" class="section container mw-100">
+              <div id="welcome-box-img"></div>
+              <div id="welcome-text">
+                <h4>
+                  Cloudinary &copy; 2018
+                </h4>
+              </div>
+            </div>
           </div>
 
           <!-- Side Bar Contents -->
           <div class="col-12 col-md-4 mt-3" id="side-bar">
             <!-- Sidebar Name and Avatar -->
-              <div class="row" id="sidebar-box">
-                <div class="py-2 pl-2" id="sidebar-item">
-                  <div id="avatar-image"></div>
-                  <div id="user-name">
-                    <div id="name" class="m-0" style="font-weight: bold;">Good Day</div>
-                    <div id="title">This is your dashboard</i></div>
-                  </div>
+            <div class="row" id="sidebar-box">
+              <div class="py-2 pl-2" id="sidebar-item">
+                <div id="avatar-image"></div>
+                <div id="user-name">
+                  <div id="name" class="m-0 teacher-name" style="font-weight: bold;">Good Day</div>
+                  <div id="title" class="teacher-feild">This is your dashboard</i></div>
                 </div>
               </div>
+            </div>
 
             <!-- Time Table Bar -->
-              <div class="row mb-1" id="sidebar-box-options">
-                <div class="py-2 pl-2" id="sidebar-item-option">
-                  <div id="icon-box">
-                    <i id="sidebar-icon" class="fas fa-table"></i>
+            <div class="row mb-1" id="sidebar-box-options">
+              <div class="py-2 pl-2" id="sidebar-item-option">
+                <div id="icon-box">
+                  <i id="sidebar-icon" class="fas fa-table"></i>
+                </div>
+                <div id="user-name">
+                  <div id="option-name">
+                    <h5 class="m-0">Class Schedule</h5>
                   </div>
-                  <div id="user-name">
-                    <div id="option-name"><h5 class="m-0">Class Schedule</h5></div>
-                    <div id="option-description">Weekly time table</div>
-                  </div>
+                  <div id="option-description">Weekly time table</div>
                 </div>
               </div>
+            </div>
             <!-- Student Records -->
-              <div class="row mb-1" id="sidebar-box-options">
-                <div class="py-2 pl-2" id="sidebar-item-option">
-                  <div id="icon-box">
-                    <i id="sidebar-icon" class="fas fa-user"></i>
+            <div class="row mb-1" id="sidebar-box-options">
+              <div class="py-2 pl-2" id="sidebar-item-option">
+                <div id="icon-box">
+                  <i id="sidebar-icon" class="fas fa-user"></i>
+                </div>
+                <div id="user-name">
+                  <div id="option-name">
+                    <h5 class="m-0">Student Profiles</h5>
                   </div>
-                  <div id="user-name">
-                    <div id="option-name"><h5 class="m-0">Student Profiles</h5></div>
-                    <div id="option-description">View/add student records</div>
-                  </div>
+                  <div id="option-description">View/add student records</div>
                 </div>
               </div>
+            </div>
 
             <!-- Notifications -->
             <div class="row mb-1" id="sidebar-box-options">
@@ -466,7 +494,9 @@
                   <i id="sidebar-icon" class="fas fa-bell"></i>
                 </div>
                 <div id="user-name">
-                  <div id="option-name"><h5 class="m-0">Notifications</h5></div>
+                  <div id="option-name">
+                    <h5 class="m-0">Notifications</h5>
+                  </div>
                   <div id="option-description">See new announcements</div>
                 </div>
               </div>
@@ -479,7 +509,9 @@
                   <i id="sidebar-icon" class="fas fa-book"></i>
                 </div>
                 <div id="user-name">
-                  <div id="option-name"><h5 class="m-0">Sylabbles</h5></div>
+                  <div id="option-name">
+                    <h5 class="m-0">Sylabbles</h5>
+                  </div>
                   <div id="option-description">See your Sylabbles</div>
                 </div>
               </div>
@@ -488,13 +520,12 @@
         </div>
       </div>
     </main>
-
   </div>
 
   <!-- Javascript -->
   <noscript>
     <style>
-      #big-container{
+      #big-container {
         display: none;
       }
 
@@ -503,31 +534,31 @@
       }
 
       #no-script {
-      display:flex;
-      flex-direction: column;
-      align-items:center;
-      justify-content:center;
-      
-      text-align: center;
-      font-size: 5vmin;
-      height: 100vh;
-      width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
-      padding: 0px 2vmin;
-    }
+        text-align: center;
+        font-size: 5vmin;
+        height: 100vh;
+        width: 100vw;
 
-    #reason-text {
-      margin-top: 10px;
-      font-size: 3vmin;
-    }
+        padding: 0px 2vmin;
+      }
+
+      #reason-text {
+        margin-top: 10px;
+        font-size: 3vmin;
+      }
     </style>
 
     <div id="no-script">
       <div id="info-text">
-        Hello, <strong> Javascript is disabled</strong>  on your machine 
-      Enable it or use another browser!
+        Hello, <strong> Javascript is disabled</strong> on your machine
+        Enable it or use another browser!
       </div>
-      
+
       <div id="reason-text">
         Why? This website relies heavily on javascript to work properly <br>
         <a href="#">Learn More</a>

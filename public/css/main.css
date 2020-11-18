@@ -262,7 +262,9 @@ textarea {
 }
 
 /* Initializations */
-#navigation, #navigation-desktop, #welcome-text {
+#navigation,
+#navigation-desktop,
+#welcome-text {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -277,22 +279,23 @@ textarea {
 }
 
 .section {
-  margin:0px;
+  margin: 0px;
   background: #ffffff;
   overflow: hidden;
+  margin-bottom: 20px;
 
   /* border: solid 1px #d6d6d6; */
-  border-radius: 3px;
-  box-shadow: #303030 0px 0px 3px;
+  /* border-radius: 3px; */
+  box-shadow: #888 0px 0px 2px;
 }
 
 .mw-100 {
-  min-width:100%
+  min-width: 100%;
 }
 
 .mbutton {
   background: #106944;
-  color:#fff;
+  color: #fff;
   font-weight: bold;
 }
 
@@ -308,18 +311,17 @@ textarea {
 }
 
 /* Header */
-#header-container  {
+#header-container {
   background: #ffffff;
   color: #076447;
-  height:10vh;
+  height: 10vh;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 1.5vmax;
 
-  box-shadow: #777 0px 0.8px 2px;
-  /* border-bottom: solid 1px #777; */
+  border-bottom: solid 1px #747474;
 }
 
 #navigation-desktop a {
@@ -339,7 +341,7 @@ textarea {
 }
 
 #title-text h2 {
-  font-size:175%;
+  font-size: 175%;
   margin-top: 5x;
 }
 
@@ -348,7 +350,7 @@ textarea {
   height: 100%;
 }
 
-#navigation-desktop{
+#navigation-desktop {
   font-size: 3vmin;
 }
 
@@ -361,11 +363,13 @@ textarea {
   display: none;
 }
 
-#sign-in-icon, #dropdown-icon {
+#sign-in-icon,
+#dropdown-icon {
   position: relative;
 }
 
-#sign-in-icon:hover #sign-in-content, #dropdown-icon:hover #dropdown-content {
+#sign-in-icon:hover #sign-in-content,
+#dropdown-icon:hover #dropdown-content {
   display: block;
   overflow: auto;
 }
@@ -374,7 +378,8 @@ textarea {
   display: block;
 }
 
-#sign-in-content, #dropdown-content {
+#sign-in-content,
+#dropdown-content {
   display: none;
   position: absolute;
   z-index: 1;
@@ -393,7 +398,8 @@ textarea {
   box-shadow: #333 0px 0px 3px;
   animation: fade 0.4s;
 
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 #dropdown-content a {
@@ -431,8 +437,10 @@ textarea {
   width: 45%;
 }
 
-#login-username, #login-password, #login-type {
-  margin-bottom:1vh ;
+#login-username,
+#login-password,
+#login-type {
+  margin-bottom: 1vh;
   padding: 2vmin;
 
   border: solid 1.9px #747474;
@@ -440,8 +448,9 @@ textarea {
   border-radius: 3px;
 }
 
-#login-form #login-username:valid, #login-form #login-password:valid {
-  margin-bottom:1vh ;
+#login-form #login-username:valid,
+#login-form #login-password:valid {
+  margin-bottom: 1vh;
   padding: 2vmin;
 
   border: solid 1.9px #6623b3;
@@ -449,11 +458,11 @@ textarea {
   border-radius: 3px;
 }
 
-#login-form label, #register-form label {
+#login-form label,
+#register-form label {
   font-weight: bold;
   font-size: 3vmin;
   margin: 1vmin 0 1vmin 0;
-
 }
 #login-form button {
   padding: 2vmin;
@@ -467,10 +476,10 @@ textarea {
 }
 
 #login-form button:hover {
-  background:#6623b3;
+  background: #6623b3;
 }
 
-#login-alternatives a{
+#login-alternatives a {
   color: #6623b3;
 }
 #form-image {
@@ -489,11 +498,12 @@ textarea {
   align-items: center;
   justify-content: center;
 
-  line-height: 1.0;
+  line-height: 1;
   width: 80%;
 }
 
-#register-form input, #register-form select {
+#register-form input,
+#register-form select {
   width: 100%;
   padding: 2vmin;
   margin-bottom: 4vmin;
@@ -502,31 +512,30 @@ textarea {
 #register-form button {
   width: 100%;
   padding: 2vmin;
-  border:none;
+  border: none;
   background: #0b57bb;
   color: #fff;
 
   font-weight: bold;
 }
 
-
 /* Side Bar */
-#side-bar{
+#side-bar {
   display: flex;
   flex-direction: column;
+  background: #fff;
 }
 
 #sidebar-box {
   height: 15vmin;
   cursor: pointer;
-  
+
   margin-bottom: 5px;
   color: #fff;
   background: #076447;
-  
 }
 
-#sidebar-box:hover{
+#sidebar-box:hover {
   background: #111;
   color: #ffffff;
 }
@@ -535,11 +544,10 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: start;
-  
+
   height: inherit;
   width: 100%;
   margin: auto;
-
 
   /* border-bottom: solid 1px rgb(196, 196, 196); */
 }
@@ -547,24 +555,24 @@ textarea {
 #avatar-image {
   height: 8vmin;
   width: 8vmin;
-  background: url('../img/siteImages/user.png') center;
+  background: url("../img/siteImages/user.png") center;
   border-radius: 50%;
 }
 
 #user-name {
-  margin-left:3%;
+  margin-left: 3%;
   display: flex;
   flex-direction: column;
   justify-content: start;
 }
 
-#name h5 b{
+#name h5 b {
   font-size: 90%;
   margin: 0px;
   padding: 0px;
 }
 
-#title{
+#title {
   margin: 0px;
   padding: 0px;
 
@@ -574,29 +582,28 @@ textarea {
 /* Sidebar Options  */
 #sidebar-box-options {
   height: 10vmin;
-  
 }
 
 #sidebar-item-option {
   display: flex;
   align-items: center;
   justify-content: start;
-  
+
   height: inherit;
   width: 100%;
   margin: auto;
 
   border-bottom: solid 1px #b6b6b6;
-  line-height: 1.0;
+  line-height: 1;
   /* border-bottom: solid 1px rgb(196, 196, 196); */
 }
 
-#sidebar-item-option:hover{
+#sidebar-item-option:hover {
   background: #e2e2e2;
   cursor: pointer;
 }
 
-#option-name h5{
+#option-name h5 {
   font-size: 3.4vmin;
 }
 
@@ -609,12 +616,12 @@ textarea {
   width: 5vmin;
 
   /* background: blue; */
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#sidebar-icon{
+#sidebar-icon {
   font-size: 5vmin;
 }
 
@@ -626,6 +633,7 @@ textarea {
 main {
   min-height: 90vh;
   border-right: solid 1px #cacaca;
+  background: #f3f3f3;
 }
 
 /* Welcome Box */
@@ -633,7 +641,7 @@ main {
   height: 90vh;
   width: 100%;
 
-  display: none;
+  display: flex;
   flex-direction: column;
 
   align-items: center;
@@ -641,7 +649,7 @@ main {
 }
 
 #welcome-box-img {
-  background: url('../img/siteImages/welcome.svg') bottom no-repeat;
+  background: url("../img/siteImages/welcome.svg") bottom no-repeat;
   background-size: 80vmin;
 
   height: 80%;
@@ -660,12 +668,12 @@ main {
 
 /* Teacher Profile Box */
 #profile-box {
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  line-height: 1.0;
+  line-height: 1;
   /* background: #eee; */
 }
 
@@ -678,13 +686,12 @@ main {
   margin-bottom: 2vmin;
 }
 #profile-bio {
-  text-align:center;
+  text-align: center;
 }
 
 #profile-form {
   width: 100%;
 }
-
 
 #profile-form input {
   width: 100%;
@@ -692,13 +699,15 @@ main {
   margin-bottom: 2vmin;
 }
 
-#profile-form button{
+#profile-form button {
   width: 100%;
   padding: 2vmin;
-  border:none;
-  background: #d0ffcc;
+  border: none;
 }
 
+#profile-save {
+  background: #58c74e;
+}
 #profile-edit {
   background: #216fe4 !important;
   color: white;
@@ -709,9 +718,8 @@ main {
   display: none;
 } */
 
-
 .s-dark {
-  background: #e4e4e4;
+  border-bottom: solid 1px rgb(226, 226, 226);
 }
 
 /* Student Profile */
@@ -720,7 +728,7 @@ main {
 }
 
 /* Responsive */
-@media only screen and  (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   /* Heade container */
   #header-container {
     height: 70px;
@@ -728,7 +736,7 @@ main {
 
   /* Main Bar */
   #welcome-box-img {
-    background: url('../img/siteImages/welcome.svg') center no-repeat;
+    background: url("../img/siteImages/welcome.svg") center no-repeat;
     background-size: 80vmin;
 
     height: 40%;
@@ -737,14 +745,15 @@ main {
   #welcome-text {
     height: 10%;
   }
-  #user-dropdown, #main-dropdown {
+  #user-dropdown,
+  #main-dropdown {
     height: 13%;
     width: 40%;
     background: #ffffff;
-    margin: 5px 0px 5px 59.0%;
+    margin: 5px 0px 5px 59%;
   }
 
-  #navigation-desktop{
+  #navigation-desktop {
     display: none;
   }
 
@@ -757,15 +766,15 @@ main {
     line-height: 1.5;
   }
 
-  #option-name h5{
+  #option-name h5 {
     font-size: 3.8vmin;
   }
-  
+
   #option-description {
     font-size: 2.8vmin;
     margin-top: 0.3vmin;
   }
-  
+
   /* Login Form */
   #login-form {
     width: 75%;
@@ -779,12 +788,12 @@ main {
     width: 25vmin;
     background: #222;
     border-radius: 50%;
-  
+
     margin-bottom: 5vmin;
   }
 
   /* Profile Form */
-  #profile-form{
+  #profile-form {
     width: 90%;
   }
 
@@ -798,6 +807,10 @@ main {
 }
 
 @keyframes fade {
-  0% {opacity: 0;}
-  100%{opacity:1}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
