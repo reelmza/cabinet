@@ -2,24 +2,24 @@
   {
     "users": [
       {
-        "name": "ANTHONY MARTIAL",
-        "age": "25",
-        "sex": "Female",
+        "name": "JESSE MOSES",
+        "age": "19",
+        "sex": "Male",
         "password": "admin",
         "username": "reelmza",
-        "feild": "Graphic Designer",
-        "mail": "patricko@gmail.com",
-        "address": "Orejuela, New Mexico",
+        "feild": "Maths Teacher",
+        "mail": "jesse32@gmail.com",
+        "address": "Lagos, Nigeria",
         "phone": "09041431717"
       },
       {
-        "name": "ABRAHAM TAMI",
-        "age": "23",
+        "name": "FELIX TAMI",
+        "age": "20",
         "sex": "Male",
         "password": "1234",
         "username": "user1",
-        "mail": "abaraham@gmail.com",
-        "address": "Ojuelegba",
+        "mail": "felix2020@gmail.com",
+        "address": "Ibadan, Nigeria",
         "phone": "08164887362",
         "feild": "Biology"
       }

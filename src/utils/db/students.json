@@ -3,32 +3,32 @@
     "username": "reelmza",
     "students": [
       {
-        "firstName": "PETER",
-        "secondName": "BADONSKI",
+        "firstName": "MOHAMMED",
+        "secondName": "USMAN",
         "firstCA": 4,
         "secondCA": 3,
         "exam": 70,
         "id": 0
       },
       {
-        "firstName": "MARILYN",
-        "secondName": "ARTETA",
+        "firstName": "GEORGE",
+        "secondName": "NDIDI",
         "firstCA": 5,
         "secondCA": 5,
         "exam": 23,
         "id": 1
       },
       {
-        "firstName": "DIEGO",
-        "secondName": "SEGUIRE",
+        "firstName": "WILFRED",
+        "secondName": "PATRICK",
         "firstCA": 2,
         "secondCA": 0,
         "exam": 33,
         "id": 2
       },
       {
-        "firstName": "JAMES",
-        "secondName": "PATRICK",
+        "firstName": "HANNAH",
+        "secondName": "JONATHAN",
         "firstCA": 6,
         "secondCA": 10,
         "exam": 45
@@ -39,30 +39,30 @@
     "username": "user1",
     "students": [
       {
-        "firstName": "HANNA",
-        "secondName": "PATERSON",
+        "firstName": "JAMES",
+        "secondName": "PATRICK",
         "firstCA": 5,
         "secondCA": 5,
         "exam": 46,
         "id": 0
       },
       {
-        "firstName": "HOMAN",
-        "secondName": "KILETER",
+        "firstName": "ANDREW",
+        "secondName": "JOHN",
         "firstCA": 3,
         "secondCA": 9,
         "exam": 46
       },
       {
-        "firstName": "MANUEL",
-        "secondName": "NEUR",
+        "firstName": "OBADIAH",
+        "secondName": "EZEKIEL",
         "firstCA": 3,
         "secondCA": 5,
         "exam": 56
       },
       {
-        "firstName": "DAMIAN",
-        "secondName": "ARTETA",
+        "firstName": "ALEXANDER",
+        "secondName": "ARNNOLD",
         "firstCA": 5,
         "secondCA": 9,
         "exam": 20
