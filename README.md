@@ -2,7 +2,7 @@
 ### Cabinet is a lightweight web app for storing students data and scheduling classes easily
 This app is open source and free to use, you can clone the repository or downlolad the code from [here](https://github.com/reelmza/cabinet)
 
-![Project cover image](https://github.com/reelmza/cabinet/md_image.png)
+![Porject Cover Image](https://raw.githubusercontent.com/reelmza/cabinet/main/md_image.png)
 
 **Languages Used:**
 - Javscript / NodeJs
